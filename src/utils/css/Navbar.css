@@ -1,6 +1,9 @@
 .navbar{
- background-color: #451A11;
- height: 80px;
+ /* background-color: #451A11; */
+ background-image: url(../images/nav.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ height: 120px;
  display: flex;
  justify-content: start;
  align-items: center;
