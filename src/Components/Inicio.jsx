@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Pollo from "../utils/images/carrus1.png"
+import Kit from "../utils/images/carrus2.PNG"
+import Carne from "../utils/images/carrus3.png"
 
 import {
   Carousel,
@@ -11,19 +14,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const items = [
   {
-    src: require('./../utils/images/carrus1.png'),
+    src: Pollo,
     altText: 'Imagen 1',
-    caption: 'Hamburguesa'
   },
   {
-    src: require('./../utils/images/carrus2.PNG'),
+    src: Kit,
     altText: 'Imagen 2',
-    caption: 'Sandwish'
   },
   {
-    src: require('./../utils/images/carrus3.png'),
+    src: Carne,
     altText: 'Imagen 3',
-    caption: 'Carne'
   }
 ];
 
@@ -48,14 +48,14 @@ const Inicio = (props) => {
     setActiveIndex(newIndex);
   }
 
-  const slides = items.map((item) => {
+  const slides = items.map((item, index) => {
     return (
       <CarouselItem
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={item.src}
+        key={index}
       >
-        <img src={item.src} alt={item.altText} width='100%' height='50px' />
+        <img src={item.src} alt={item.altText} width='100%' height='450px' />   
         <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
       </CarouselItem>
     );
@@ -64,8 +64,8 @@ const Inicio = (props) => {
   return (
     <Carousel
       activeIndex={activeIndex}
-      next={next}
-      previous={previous}
+      // next={next}
+      // previous={previous}
     >
       <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
       {slides}
