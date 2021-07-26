@@ -7,15 +7,17 @@ import Menu from './Components/Menu.jsx';
 import Ordenes from './Components/Ordenes.jsx';
 
 
+
+
 function App() {
   return (
     <>
     <Router>
       <Navbar />
       <Switch>
-       <Route path='/inicio' exact component={Inicio} />
-       <Route path='/menu' component={Menu} />
-       <Route path='/ordenes' component={Ordenes} />
+       <Route path="/menu" component={Menu} />
+       <Route path="/inicio" exact component={Inicio} />
+       <Route path="/ordenes" component={Ordenes} />
       </Switch>
       </Router>
     </>

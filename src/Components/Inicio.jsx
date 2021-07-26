@@ -73,6 +73,7 @@ const Inicio = (props) => {
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
     </Carousel>
   );
+    
 }
 
 export default Inicio;
