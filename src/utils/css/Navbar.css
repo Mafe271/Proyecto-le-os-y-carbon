@@ -1,5 +1,4 @@
 .navbar{
- /* background-color: #451A11; */
  background-image: url(../images/nav.png);
  background-repeat: no-repeat;
  background-size: cover;
@@ -16,6 +15,8 @@
  }
 
  .nav-menu {
+ position: absolute;
+ z-index: 2; 
  background-color: #451A11;
  width: 250px;
  height: 100vh;

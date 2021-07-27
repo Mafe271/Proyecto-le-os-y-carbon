@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Pollo from "../utils/images/carrus1.png"
 import Kit from "../utils/images/carrus2.PNG"
 import Carne from "../utils/images/carrus3.png"
+import  '../utils/css/inicio.css';
+
 
 import {
   Carousel,
@@ -11,7 +13,7 @@ import {
   CarouselCaption
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'bootstrap/dist/css/bootstrap.css';
 const items = [
   {
     src: Pollo,
@@ -24,10 +26,10 @@ const items = [
   {
     src: Carne,
     altText: 'Imagen 3',
-  }
+  },
 ];
 
-const Inicio = (props) => {
+const Inicio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -35,6 +37,12 @@ const Inicio = (props) => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
+
+    <div>
+      thi is my component: 
+      <Link text="PAGIANA OFICIAL"/>
+      <Link text="CARTA"/>
+    </div>
   }
 
   const previous = () => {
@@ -48,6 +56,7 @@ const Inicio = (props) => {
     setActiveIndex(newIndex);
   }
 
+
   const slides = items.map((item, index) => {
     return (
       <CarouselItem
@@ -60,20 +69,36 @@ const Inicio = (props) => {
       </CarouselItem>
     );
   });
+   
 
   return (
     <Carousel
       activeIndex={activeIndex}
-      // next={next}
-      // previous={previous}
+      next={next}
+      previous={previous}
     >
       <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
       {slides}
-      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+      <CarouselControl direction="prev" directionText="." onClickHandler={previous} />
+      <CarouselControl direction="next" directionText="." onClickHandler={next} />
     </Carousel>
   );
     
 }
+
+
+function Link(props) {
+  return (
+    <div id="link">
+      {props.text}
+             <a className="link"
+            href="https://lenosycarbon.com.co/"
+            target="-blank" rel="noopener noreferrer"
+            >
+            </a>
+    </div>
+  );
+};
+
 
 export default Inicio;
