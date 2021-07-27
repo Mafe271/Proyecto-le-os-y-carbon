@@ -1,0 +1,54 @@
+.menu{
+    background-image: url(../images/fontmenu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: block;
+    border: 8px solid #451A11;
+}
+
+.menu img{
+    width: 400px;
+    height: 200px;
+}
+.menu2,.menu4, .menu5{
+    padding: 50px;
+    text-align: center;
+}
+.menu3{
+    padding: 50px;
+    text-align: center;
+}
+
+.img2, .img7{
+    margin-left: 200px;
+    transform: rotate(-10deg);
+}
+.img1, .img5, .img6{
+    transform: rotate(10deg);
+}
+.img4{
+    margin-right: 200px;
+    transform: rotate(-10deg);
+}
+#title {
+    background-image: url(../images/font.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:absolute;
+    text-align: center;
+    width: 650px;
+    height: 230px;
+    margin-left: 350px;
+    margin-top: -80px;
+    z-index: 1;
+    border: 1px solid white;
+  }
+  .titleOrang {
+    font-family: roboto slab;
+    text-decoration: none;
+    font-size: 150px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 3px -3px #EC6E21 ;
+}
