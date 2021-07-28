@@ -10,10 +10,10 @@ import coctel from '../utils/images/coctel.jpg'
 
 function Menu() {
   return (
-    <div className='menu'>
+    <div className='menu'> 
 
       <div className='menu2'>
-        <img className='img1' src={calentao} width='200px' height='100px'/>
+        <img className='img1' src={calentao}/>
         <img className='img2' src={carnes}/>
       </div>
       <div className='menu3'>
