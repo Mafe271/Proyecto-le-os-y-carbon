@@ -83,6 +83,7 @@ const Inicio = () => {
       <CarouselControl direction="next" directionText="." onClickHandler={next} />
     </Carousel>
   );
+    
 }
 
 
