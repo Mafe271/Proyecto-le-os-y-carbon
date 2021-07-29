@@ -2,7 +2,7 @@
     background-image: url(../images/fontmenu.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    height: 1200px;
     display: block;
     border: 8px solid #451A11;
 }
@@ -51,4 +51,29 @@
     font-weight: 900;
     color: white;
     text-shadow: 3px -3px #EC6E21 ;
+}
+
+.location, .locat{
+    display: flex;
+    background-color: #451A11;
+}
+p{
+    font-size: 30px;
+    color: #F2DDBA;
+    font-weight: 900;
+    margin: 50px;
+    padding-top: 30px;
+}
+.location img{
+    width: 600px;
+    height: 400px;
+    margin: 20px 0px 15px 80px;
+}
+.locat img{
+    width: 600px;
+    height: 380px;
+    margin: 20px 0px 15px 145px;
+}
+.locat{
+    margin-top: 10px;
 }

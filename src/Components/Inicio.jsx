@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Pollo from "../utils/images/carrus1.png"
-import Kit from "../utils/images/carrus2.PNG"
+import Kit from "../utils/images/carrus2.png"
 import Carne from "../utils/images/carrus3.png"
 import  '../utils/css/inicio.css';
+import LinksInicio from './LinksInicio';
+
 
 
 import {
@@ -37,12 +39,11 @@ const Inicio = () => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
-
     <div>
-      thi is my component: 
-      <Link text="PAGIANA OFICIAL"/>
-      <Link text="CARTA"/>
-    </div>
+    <LinksInicio>
+</LinksInicio>
+ </div>
+
   }
 
   const previous = () => {
@@ -64,12 +65,11 @@ const Inicio = () => {
         onExited={() => setAnimating(false)}
         key={index}
       >
-        <img src={item.src} alt={item.altText} width='100%' height='450px' />   
+        <img src={item.src} alt={item.altText} width='100%' height='450px'  border='8px solid orange'/>   
         <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
       </CarouselItem>
     );
   });
-   
 
   return (
     <Carousel
@@ -82,23 +82,11 @@ const Inicio = () => {
       <CarouselControl direction="prev" directionText="." onClickHandler={previous} />
       <CarouselControl direction="next" directionText="." onClickHandler={next} />
     </Carousel>
+
   );
-    
 }
 
-
-function Link(props) {
-  return (
-    <div id="link">
-      {props.text}
-             <a className="link"
-            href="https://lenosycarbon.com.co/"
-            target="-blank" rel="noopener noreferrer"
-            >
-            </a>
-    </div>
-  );
-};
+      
 
 
 export default Inicio;
