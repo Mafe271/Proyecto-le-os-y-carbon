@@ -1,14 +1,15 @@
 import React from 'react';
-import '../../src/utils/css/menu.css';
-import calentao from '../utils/images/calentao.png'
-import carnes from '../utils/images/carnes.png'
-import carnes2 from '../utils/images/Carnes2.png'
-import entradas from '../utils/images/Entradas.png'
-import postres from '../utils/images/Postres.png'
-import sandwiches from '../utils/images/sandwiches.png'
-import coctel from '../utils/images/coctel.jpg'
-import mall from '../utils/images/mallmap.PNG'
-import airport from '../utils/images/airportmap.PNG'
+import '../Menu/menu.css';
+import calentao from '../../utils/images/calentao.png'
+import carnes from '../../utils/images/carnes.png'
+import carnes2 from '../../utils/images/Carnes2.png'
+import entradas from '../../utils/images/Entradas.png'
+import postres from '../../utils/images/Postres.png'
+import sandwiches from '../../utils/images/sandwiches.png'
+import coctel from '../../utils/images/coctel.jpg'
+import mall from '../../utils/images/mallmap.PNG'
+import airport from '../../utils/images/airportmap.PNG'
+
 
 
 function Menu() {
@@ -35,7 +36,7 @@ function Menu() {
       </div>
 
        <div className='location'>
-            <p>Leños & Carbon <br/>
+            <p className="text-center m-5">Leños & Carbon <br/>
                Centro Comercial Parque La Colina <br/>
                Carrera 58D No. 146-51 <br/>
                Local FC-7 <br/>
@@ -47,7 +48,7 @@ function Menu() {
             <img src={mall} alt="mall"/>
        </div>
        <div className='locat'>
-            <p>Leños & Carbon <br/>
+            <p className="text-center m-5">Leños & Carbon <br/>
                Aeropuerto Internacional <br/>
                El Dorado Calle 26 No. 103-09 <br/>
                Local 105 <br/>
@@ -57,9 +58,11 @@ function Menu() {
             </p>
             <img src={airport} alt="airport"/>
        </div>
+       
+        {/* <Maps isMarkerShown/> */}
 
     </div> 
   );
 }
- 
+
 export default Menu; 
