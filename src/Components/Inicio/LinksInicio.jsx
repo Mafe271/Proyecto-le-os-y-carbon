@@ -7,7 +7,7 @@ const LinksInicio = () => {
         <div>
             <div className="oficial">
                 <img src={restaurante} alt="restaurant" />
-                <a href="https://lenosycarbon.com.co/">PAGIANA OFCIAL</a>
+                <a href="https://lenosycarbon.com.co/">PAGINA OFICIAL</a>
             </div>
             <div className="historia">
                 <h1>NUESTRA HISTORIA</h1>
