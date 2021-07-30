@@ -1,6 +1,6 @@
 import React from 'react';
-import '../utils/css/inicio.css';
-import restaurante from "./../utils/images/restaurante.jpg"
+import '../Inicio/inicio.css';
+import restaurante from "../../utils/images/restaurante.jpg"
 
 const LinksInicio = () => {
     return (
