@@ -1,7 +1,8 @@
 .ordenes{
-    background-image: url(../../utils/images/restaurante.jpg);
+    background-image: url(../../utils/images/menu-image-1536x661.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: cover;
 }
 
 .mesas{
