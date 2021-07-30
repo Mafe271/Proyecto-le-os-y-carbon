@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Inicio/inicio.css';
-import restaurante from "../../utils/images/restaurante.jpg"
+import restaurante from "../../utils/images/hist.png"
 
 const LinksInicio = () => {
     return (
