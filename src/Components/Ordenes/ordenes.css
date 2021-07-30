@@ -1,0 +1,17 @@
+.ordenes{
+    background-image: url(../../utils/images/restaurante.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mesas{
+    background-color: #451A11;
+    margin: 30px 0px;
+    padding: 50px 0px;
+    text-align: center;
+}
+.mesas img{
+    width: 380px;
+    height: 280px;
+    margin-left: 100px;
+}

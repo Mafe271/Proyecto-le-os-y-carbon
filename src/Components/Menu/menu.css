@@ -1,5 +1,5 @@
 .menu{
-    background-image: url(../images/fontmenu.png);
+    background-image: url(../../utils/images/fontmenu.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 1200px;
@@ -32,7 +32,7 @@
     transform: rotate(-10deg);
 }
 #title {
-    background-image: url(../images/font.png);
+    background-image: url(../../utils/images/font.png);
     background-repeat: no-repeat;
     background-size: cover;
     position:absolute;
@@ -67,12 +67,12 @@ p{
 .location img{
     width: 600px;
     height: 400px;
-    margin: 20px 0px 15px 80px;
+    margin: 45px 0px 0px 100px;
 }
 .locat img{
     width: 600px;
     height: 380px;
-    margin: 20px 0px 15px 145px;
+    margin: 35px 0px 0px 165px;
 }
 .locat{
     margin-top: 10px;

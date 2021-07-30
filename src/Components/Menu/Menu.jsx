@@ -1,14 +1,15 @@
 import React from 'react';
-import '../../src/utils/css/menu.css';
-import calentao from '../utils/images/calentao.png'
-import carnes from '../utils/images/carnes.png'
-import carnes2 from '../utils/images/Carnes2.png'
-import entradas from '../utils/images/Entradas.png'
-import postres from '../utils/images/Postres.png'
-import sandwiches from '../utils/images/sandwiches.png'
-import coctel from '../utils/images/coctel.jpg'
-import mall from '../utils/images/mallmap.PNG'
-import airport from '../utils/images/airportmap.PNG'
+import '../Menu/menu.css';
+import calentao from '../../utils/images/calentao.png'
+import carnes from '../../utils/images/carnes.png'
+import carnes2 from '../../utils/images/Carnes2.png'
+import entradas from '../../utils/images/Entradas.png'
+import postres from '../../utils/images/Postres.png'
+import sandwiches from '../../utils/images/sandwiches.png'
+import coctel from '../../utils/images/coctel.jpg'
+import mall from '../../utils/images/mallmap.PNG'
+import airport from '../../utils/images/airportmap.PNG'
+
 
 
 function Menu() {
