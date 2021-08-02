@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Inicio from './Components/Inicio/Inicio.jsx';
 import Menu from './Components/Menu/Menu.jsx';
 import Ordenes from './Components/Ordenes/Ordenes.jsx';
-
+import Footer from  './Components/Footer/Footer';
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
        <Route path="/menu" component={Menu} />
        <Route path="/ordenes" component={Ordenes} />
       </Switch>
+      <Footer />
       </Router>
     </>
   );
