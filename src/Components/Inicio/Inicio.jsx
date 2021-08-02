@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Pollo from "../../utils/images/carrus1.png";
-import Kit from "../../utils/images/carrus2.png";
+import Kit from "../../utils/images/carrus2.PNG";
 import Carne from "../../utils/images/carrus3.png";
 import "../Inicio/inicio.css";
 import LinksInicio from "./LinksInicio";
