@@ -9,10 +9,6 @@ import sandwiches from '../../utils/images/sandwiches.PNG'
 import coctel from '../../utils/images/coctel.jpg'
 import mall from '../../utils/images/mallmap.PNG'
 import airport from '../../utils/images/airportmap.PNG'
-import Maps from '../Menu/Maps'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle'
-
 
 
 function Menu() {
@@ -61,7 +57,7 @@ function Menu() {
         </p>
         <img src={airport} alt="airport" />
       </div>
-        <Maps/>
+        
     </div>
   );
 }
