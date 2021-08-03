@@ -1,8 +1,8 @@
 .menu{
     background-image: url(../../utils/images/fontmenu.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1200px;
+    background-repeat: repeat-y;
+    background-size: contain;
+    height: auto;
     display: block;
     border: 8px solid #451A11;
 }
@@ -11,26 +11,30 @@
     width: 400px;
     height: 200px;
 }
-.menu2,.menu4, .menu5{
+.menu2, .menu4, .menu5{
+    display: flex;
     padding: 50px;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .menu3{
     padding: 50px;
     text-align: center;
 }
-
 .img2, .img7{
-    margin-left: 200px;
+    margin-left: 100px;
     transform: rotate(-10deg);
 }
 .img1, .img5, .img6{
     transform: rotate(10deg);
 }
 .img4{
-    margin-right: 200px;
     transform: rotate(-10deg);
 }
+.img5{
+    margin-left: 100px;
+}
+
 #title {
     background-image: url(../../utils/images/font.png);
     background-repeat: no-repeat;

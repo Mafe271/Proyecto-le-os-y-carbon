@@ -44,7 +44,9 @@ function Menu() {
           Horarios de atención <br />
           L – D: 10:30 am – 8:30 pm <br />
         </p>
+        <a href="https://www.google.com/maps/place/Cra.+58d+%23%23146-51,+Bogot%C3%A1/@4.7328722,-74.0683596,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f851a6dca927f:0x6a39c225f434646b!8m2!3d4.7328669!4d-74.0661709?hl=es">
         <img src={mall} alt="mall" />
+        </a>
       </div>
       <div className='locat'>
         <p>Leños & Carbon <br />
@@ -55,7 +57,9 @@ function Menu() {
           Horarios de atención <br />
           L – D: 6:00 am – 9:00 pm <br />
         </p>
+        <a href="https://www.google.com/maps/search/El+Dorado+Calle+26+No.+103-09/@4.6948835,-74.143074,16z/data=!3m1!4b1?hl=es">
         <img src={airport} alt="airport" />
+        </a>
       </div>
         
     </div>
