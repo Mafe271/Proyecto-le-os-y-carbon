@@ -2,7 +2,7 @@
     background-image: url(../../utils/images/fontmenu.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1200px;
+    height: auto;
     display: block;
     border: 8px solid #451A11;
 }
@@ -12,6 +12,7 @@
     height: 200px;
 }
 .menu2,.menu4, .menu5{
+    display: flex;
     padding: 50px;
     text-align: center;
 }
