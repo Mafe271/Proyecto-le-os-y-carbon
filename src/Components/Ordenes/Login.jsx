@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { auth } from "../../firebase";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  
+  const [email, setEmail] = useState("")
+  const [pass, setPass] = useState("")
 
   const registrarUsuario = (e) => {
     e.preventDefault();
@@ -12,12 +13,13 @@ const Login = () => {
       .then((res) => alert("usuario registrado"));
   };
   return (
+ 
     <div className="mt-4">
       <h2>Login</h2>
       <form onSubmit={registrarUsuario} className="form-group mt-3">
         <input
           onChange={(e) => {
-            setEmail(e.target.value);
+            setEmail(e.target.value)
           }}
           className="form-control mt-3"
           type="email"
@@ -25,7 +27,7 @@ const Login = () => {
         />
         <input
           onChange={(e) => {
-            setPass(e.target.value);
+            setPass(e.target.value)
           }}
           type="password"
           className="form-control mt-3"
@@ -40,5 +42,7 @@ const Login = () => {
     </div>
   );
 };
+
+
 
 export default Login;

@@ -1,0 +1,62 @@
+.tabla{
+    background-image: url(../../utils/images/font.png);
+    background-repeat: repeat-y;
+    background-size: contain;
+  }
+  .tabla h1{
+    font-size: 50px;
+    font-family: roboto slab;
+    color: blanchedalmond;
+    font-weight: 700;
+    text-align: center;
+  }
+  button{
+     background-color: #EC6E21;
+     color: blanchedalmond;
+     font-size: 26px;
+     font-family: roboto slab;
+     border-radius: 5px;
+     width: 180px;
+     height: 50px;
+  }
+  .btn, .menus{
+     margin: 30px;
+  }
+
+  .btn,.finalizar, .volver{
+    float: right;
+  }
+  .btnFirst{
+     margin: 50px;
+     margin-top: 200px;
+     text-align: center;
+  }
+  .desayunos, .entradas, .res, .pescado{
+    margin: 0px 65px ;
+  }
+  .btnSecond{
+    text-align: center;
+  }
+  .pollo, .sopas, .sandwiches{
+    margin: 10px 65px;
+  }
+  .btnThird{
+    margin: 50px;
+    text-align: center;
+  }
+  .coctel, .poster{
+    margin: 10px 130px 0px 0px;
+  }
+  .btnLast{
+    text-align: center;
+  }
+
+
+.containerTable{
+    margin: 0px 50px;
+}
+.celda{
+    color: beige;
+    padding-left: 100px;
+    font-family: roboto slab;
+}
