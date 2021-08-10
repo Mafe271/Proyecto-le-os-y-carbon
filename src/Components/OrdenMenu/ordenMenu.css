@@ -2,32 +2,35 @@
     background-image: url(../../utils/images/font.png);
     background-repeat: repeat-y;
     background-size: contain;
+    border: 3px solid #865c52;
   }
   .tabla h1{
     font-size: 50px;
     font-family: roboto slab;
     color: blanchedalmond;
     font-weight: 700;
-    text-align: center;
+    text-align: center;     
   }
-  button{
+
+  .tabla button{
      background-color: #EC6E21;
      color: blanchedalmond;
      font-size: 26px;
      font-family: roboto slab;
-     border-radius: 5px;
+     border-radius: 8px;
      width: 180px;
-     height: 50px;
+     height: 50px; 
   }
-  .btn, .menus{
-     margin: 30px;
+  .bttn, .menus, .volver{
+     margin: 50px;
   }
 
-  .btn,.finalizar, .volver{
+  .finalizar, .volver{
     float: right;
   }
+
   .btnFirst{
-     margin: 50px;
+     margin: 40px;
      margin-top: 200px;
      text-align: center;
   }
@@ -50,13 +53,3 @@
   .btnLast{
     text-align: center;
   }
-
-
-.containerTable{
-    margin: 0px 50px;
-}
-.celda{
-    color: beige;
-    padding-left: 100px;
-    font-family: roboto slab;
-}

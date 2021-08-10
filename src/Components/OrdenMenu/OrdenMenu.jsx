@@ -1,6 +1,6 @@
 import React from "react";
 import '../OrdenMenu/ordenMenu.css'
-import { styled } from '@material-ui/core';
+import { Link } from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles";
 import Desayunos from "../../Components/OrdenMenu/Desayunos";
 import {
@@ -16,50 +16,65 @@ import {
 from "@material-ui/core";
 
 const data = [
-  {cantidad_por_mesa: "2", producto: "Almojabana", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+  // {cantidad_por_mesa: "2", producto: "Almojabana", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
 ];
 
-function ordenMenu() {
-  const useStyles = makeStyles({
-    table: {
-      minWidth: 700,
-    },
-  });
+function OrdenMenu() {
+  
+  
+const useStyle = makeStyles({
+  containerTable: {
+    minWidth: 700,                
+    margin: '50px 50px 100px',    
+  },
+  cellTitle:{
+    fontSize: '23px',
+    color: 'bisque',
+    fontFamily: 'roboto slab',
+  },
+  celda:{
+    fontSize: '20px',
+    color: 'beige',
+    paddingLeft: '50px',
+    fontFamily: 'roboto slab',
+},
+});
 
+  const classes = useStyle()
 
   return (
     <div className="tabla">
       <h1> Pepito Perez </h1>
-      <div className="containerTable">
+      <div className={classes.containerTable}>   
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className='celda'> Cantidad por mesa </TableCell>
-                <TableCell className='celda'> Producto </TableCell>
-                <TableCell className='celda'> Precio por unidad</TableCell>
-                <TableCell className='celda'> Subtotal </TableCell>
+                <TableCell className={classes.cellTitle}> Cantidad por mesa </TableCell>
+                <TableCell className={classes.cellTitle}> Producto </TableCell>
+                <TableCell className={classes.cellTitle}> Precio por unidad</TableCell>
+                <TableCell className={classes.cellTitle}> Subtotal </TableCell>
               </TableRow>
             </TableHead>
 
             <TableBody cla>
               {data.map((celda) => (
                 <TableRow>
-                  <TableCell> {celda.cantidad_por_mesa} </TableCell>
-                  <TableCell> {celda.producto} </TableCell>
-                  <TableCell> {celda.precio_por_unidad} </TableCell>
-                  <TableCell> {celda.subtotal} </TableCell>
-                  <TableCell> {celda.total} </TableCell>
+                  <TableCell className={classes.celda}> {celda.cantidad_por_mesa}</TableCell>
+                  <TableCell className={classes.celda}> {celda.producto} </TableCell>
+                  <TableCell className={classes.celda}> {celda.precio_por_unidad} </TableCell>
+                  <TableCell className={classes.celda}> {celda.subtotal} </TableCell>
+                  <TableCell className={classes.celda}> {celda.total} </TableCell>
                 </TableRow>
               ))}
-            </TableBody>
+            </TableBody>  
           </Table>
         </TableContainer>
       </div>
@@ -67,17 +82,20 @@ function ordenMenu() {
       <button className='menus' onClick="menus">
         Menú
       </button>
-      <button className="volver" onClick='menus'>
-        Volver    
-      </button>
-      <div className="btn">
-        <button className="finalizar" onClick="menus">
+    
+      <Link className="volver" to="/Ordenes"> 
+        <button>
+           Volver 
+        </button>      
+      </Link>
+      <div className="bttn">
+        <button className="finalizar " onClick="menus">
           Finalizar
         </button>
       </div>
 
       <div className="btnFirst">
-        <button className="desayunos" onClick="Desayunos">
+        <button className="desayunos" onClick={Desayunos}>
           Desayunos
         </button>
         <button className="entradas" onClick="Entradas">
@@ -119,4 +137,5 @@ function ordenMenu() {
   );
 }
 
-export default ordenMenu;
+
+export default OrdenMenu;

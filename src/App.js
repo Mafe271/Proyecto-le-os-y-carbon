@@ -6,9 +6,7 @@ import Inicio from "./Components/Inicio/Inicio.jsx";
 import Menu from "./Components/Menu/Menu.jsx";
 import Ordenes from "./Components/Ordenes/Ordenes.jsx";
 import Footer from "./Components/Footer/Footer";
-import Login from "./Components/Ordenes/Login";
 import OrdenMenu from "./Components/OrdenMenu/OrdenMenu";
-
 
 function App() {
   return (   
@@ -20,12 +18,11 @@ function App() {
           <Route path="/" exact component={Inicio} />
           <Route path="/menu" component={Menu} />
           <Route path="/ordenes" component={Ordenes} />
-          <Route path="/OrdenMenu" component={OrdenMenu} />
-          <Route path="/login" component={Login} />
+          <Route path="/ordenMenu" component={OrdenMenu} />
         </Switch>
         <Footer />
       </Router>
-    </>
+    </>            
   );
 }
 

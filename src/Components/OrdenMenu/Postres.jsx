@@ -11,6 +11,21 @@ import  {Button, Table,
       }
 from '@material-ui/core';
 
+const useStyles = makeStyles({
+  containerTable: {
+    minWidth: 700,
+    color: 'white',
+    margin: '0px 50px',
+  },
+  celda:{
+    fontSize: '20px',
+    color: 'beige',
+    paddingLeft: '50px',
+    fontFamily: 'roboto slab',
+},
+ 
+});
+
 const desayunos=[
     {producto: 'AREPA_PAISA', precio_por_unidad: '$3.500' , eliminar:'-' },
     {producto: 'PANDEBONO', precio_por_unidad: '$4.900' , eliminar:'-' },
@@ -30,17 +45,11 @@ const desayunos=[
 ];
 
 function Postres(props) {
-    const useStyles = makeStyles({
-        table: {
-          minWidth: 700,
-          color: 'white',
-        },
-       
-      });
       
+      const classes = useStyle()
         return (
           <>
-            <div className="containerTable">
+            <div className={classes.containerTable}>
                 <TableContainer> 
                     <Table> 
                         <TableHead> 
@@ -52,11 +61,11 @@ function Postres(props) {
                         </TableHead>
       
                         <TableBody>
-                          {desayunos.map(celda=>(
+                          {postres.map(celda=>(
                             <TableRow>
-                              <TableCell className="celda"> {celda.producto} </TableCell>
-                              <TableCell className='celda'> {celda.precio_por_unidad} </TableCell>
-                              <TableCell className='celda'> {celda.eliminar} </TableCell>
+                              <TableCell className={classes.celda}> {celda.producto} </TableCell>
+                              <TableCell className={classes.celda}> {celda.precio_por_unidad} </TableCell>
+                              <TableCell className={classes.celda}> {celda.eliminar} </TableCell>
                              </TableRow>
                           ))}
                         </TableBody>

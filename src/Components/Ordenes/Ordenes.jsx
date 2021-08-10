@@ -3,7 +3,7 @@ import "../../Components/Ordenes/ordenes.css";
 import mesa1 from "../../utils/images/mesaOrdenes.png";
 import mesa from "../../utils/images/mesaOrdenes.png";
 import Mesas from "./Mesas";
-import Login from "./../Ordenes/Login";
+
 
 function Ordenes() {
   return (
@@ -17,7 +17,7 @@ function Ordenes() {
         <img className="muestra" src={mesa1} alt="mesa" />
       </div>
 
-       <Login />
+      
        <Mesas />
     </div>
   );
