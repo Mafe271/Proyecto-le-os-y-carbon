@@ -4,14 +4,13 @@ import { Link } from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles";
 import Desayunos from "../../Components/OrdenMenu/Desayunos";
 import {
-  Button,
   Table,
   TableBody,
   TableCell,
   TableContainer,   
   TableHead,
   TableRow,
-} 
+}                   
 
 from "@material-ui/core";
 
@@ -27,7 +26,6 @@ const data = [
 ];
 
 function OrdenMenu() {
-  
   
 const useStyle = makeStyles({
   containerTable: {
@@ -95,7 +93,7 @@ const useStyle = makeStyles({
       </div>
 
       <div className="btnFirst">
-        <button className="desayunos" onClick={Desayunos}>
+        <button className="desayunos" onClick='desayunos'>
           Desayunos
         </button>
         <button className="entradas" onClick="Entradas">

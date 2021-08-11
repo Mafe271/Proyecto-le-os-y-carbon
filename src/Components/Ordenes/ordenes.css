@@ -44,20 +44,20 @@ h2{
  font-family: roboto slab; 
  font-weight:800; 
 }                         
-.btn{
+.enter{
     font-size: 18px; 
     color:cornsilk;        
     font-family: roboto slab;
     background-color: #451A11; 
-    margin: 30px -30px 0px 0px;
-    padding: auto;
+    margin: 30px 0px 0px 30px;       
 }
-.cancel{
+.cancel{                               
     color: cornsilk;
     background-color: #451A11; 
     font-family: roboto slab;
     width: 80px;
     height: 40px;
     border-radius: 5px;
-    margin-top: -300px;
+    float: right;
+    margin: 30px;  
 }
