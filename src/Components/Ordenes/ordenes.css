@@ -19,9 +19,10 @@
     padding: 50px 0px;
     text-align: center;
 }
-.mesas img{
+.link, .mesas img{
     width: 380px;
     height: 280px;
+    margin: 30px;
 }
 .muestra{
     margin-left: 180px;
@@ -33,9 +34,30 @@
 }
 .mesa1, .mesa2{
     padding: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 30px;      
     transform: rotate(90deg);
 }
-.mesa2{
-    margin-left: 180px;
+.mesa2{                           
+    margin-left: 10px;
+}
+h2{
+ font-family: roboto slab; 
+ font-weight:800; 
+}                         
+.btn{
+    font-size: 18px; 
+    color:cornsilk;        
+    font-family: roboto slab;
+    background-color: #451A11; 
+    margin: 30px -30px 0px 0px;
+    padding: auto;
+}
+.cancel{
+    color: cornsilk;
+    background-color: #451A11; 
+    font-family: roboto slab;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: -300px;
 }
