@@ -18,10 +18,10 @@ const useStyles=makeStyles((theme)=>({
       left: '50%',  
       transform: 'translate(-50%, -50%)'
   },
-  // cancel:{
-  //   color:'white',
-  //   marginLeft:'30px'
-  // }
+  entrar:{
+    color:'white',
+    marginTop:'100px'
+  }
 }))    
 function Mesas() {
     const styles = useStyles(); 
@@ -66,15 +66,18 @@ function Mesas() {
       />
       <input
         type="submit"
-        className="btn btn-block"
-        value="sing in" 
+        className="btn btn-block enter"
+        value="Sing in"                        
+      /> 
+      <input
+        type="submit"
+        className="btn btn-block cancel"
+        value="Cancelar"
+        onClick={()=>abrirCerrarModal()} 
       /> 
     </form> 
-      <div align='right'>
-              <button className='cancel' onClick={()=>abrirCerrarModal()}>Cancelar</button>
-    </div>
     </div> 
-)
+)                      
 
   return (
      
@@ -95,7 +98,7 @@ function Mesas() {
            <button className="link" onClick={()=>abrirCerrarModal()}>
                <img className="mesa2" src={mesa} alt="mesa" />
            </button> 
-        </div>
+        </div> 
 
         <div className="zona">
            <button className="link" onClick={()=>abrirCerrarModal()}>

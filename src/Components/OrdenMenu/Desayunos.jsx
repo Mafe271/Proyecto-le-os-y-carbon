@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import { styled } from '@material-ui/core';
+import MaterialTable from 'material-table'
 import { makeStyles } from '@material-ui/core/styles';
-import  {Button, Table,
+import  {Button,
          TableBody,
          TableCell,            
          TableContainer,
@@ -24,29 +24,50 @@ const useStyle = makeStyles({
 },
 
 });
- 
+
 const desayunos=[ 
-    {producto: 'AREPA PAISA', precio_por_unidad: '$3.500' , eliminar:'-' },
-    {producto: 'PANDEBONO', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'ALMOJÁBANA', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'PORCIÓN DE QUESO (Queso blanco) ', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'HUEVOS AL GUSTO (2 unidades)', precio_por_unidad: '' , eliminar:'-' },
-    {producto: '-Frito o revuelto', precio_por_unidad: '$5.900' , eliminar:'-' },
-    {producto: '-Con cebolla y tomate', precio_por_unidad: '$6.900' , eliminar:'-' },
-    {producto: 'COCTEL DE FRUTAS (kiwi, banano, fresa y melón)', precio_por_unidad: '$6.900' , eliminar:'-' },
-    {producto: 'CALDO DE COSTILLA', precio_por_unidad: '$11.900' , eliminar:'-' },
-    {producto: 'CANASTA DE ALMOJÁBANA Y PAN DE BONO', precio_por_unidad: '$13.900' , eliminar:'-' },
-    {producto: 'CALENTAO CON CHORIZO, LENTEJAS Y AREPA', precio_por_unidad: '$17.900' , eliminar:'-' },
-    {producto: 'CALENTAO CON CARNE DE RES O CARNE DE CERDO Y MADURO', precio_por_unidad: '$17.900' , eliminar:'-' },
-    {producto: 'CALENTAO PAISA (Chicharrón, frijol, maduro y aguacate)', precio_por_unidad: '$21.900' , eliminar:'-' },
-    {producto: 'BISTEC A CABALLO', precio_por_unidad: '$22.900' , eliminar:'-' }, 
+  {producto: 'AREPA PAISA', precio_por_unidad: 3.500 , eliminar:'-' },
+  {producto: 'PANDEBONO', precio_por_unidad: 4.900 , eliminar:'-' },
+  {producto: 'ALMOJÁBANA', precio_por_unidad: 4.900 , eliminar:'-' },
+  {producto: 'PORCIÓN DE QUESO (Queso blanco) ', precio_por_unidad: 4.900 , eliminar:'-' },
+  {producto: 'HUEVOS AL GUSTO (2 unidades)', precio_por_unidad: '' , eliminar:'-' },
+  {producto: '-Frito o revuelto', precio_por_unidad: 5.900 , eliminar:'-' },
+  {producto: '-Con cebolla y tomate', precio_por_unidad: 6.900 , eliminar:'-' },
+  {producto: 'COCTEL DE FRUTAS (kiwi, banano, fresa y melón)', precio_por_unidad: 6.900 , eliminar:'-' },
+  {producto: 'CALDO DE COSTILLA', precio_por_unidad: 11.900 , eliminar:'-' },
+  {producto: 'CANASTA DE ALMOJÁBANA Y PAN DE BONO', precio_por_unidad: 13.900 , eliminar:'-' },
+  {producto: 'CALENTAO CON CHORIZO, LENTEJAS Y AREPA', precio_por_unidad: 17.900 , eliminar:'-' },
+  {producto: 'CALENTAO CON CARNE DE RES O CARNE DE CERDO Y MADURO', precio_por_unidad: 17.900 , eliminar:'-' },
+  {producto: 'CALENTAO PAISA (Chicharrón, frijol, maduro y aguacate)', precio_por_unidad: 21.900 , eliminar:'-' },
+  {producto: 'BISTEC A CABALLO', precio_por_unidad: 22.900 , eliminar:'-' }, 
 
 ];
-const addProducto = () => {
+ 
 
-}
+
 function Desayunos() {     
 
+
+  // const [desayunos, setDesayunos]=useState([]);
+  // const peticionGet = async () => {
+  }
+  const columnas=[
+    {
+      title:'Producto',
+      field:'producto'
+    },
+    {
+      title:'Precio',
+      field:'presio_por_unidad',
+      type:'numeric'
+    },
+    {
+      title:'Eliminar',
+      field:'eliminar'
+    }
+  ];
+
+ 
   const classes = useStyle()
   return (
     <>
@@ -75,7 +96,6 @@ function Desayunos() {
       </div>   
     </>
   );
-}  
 
 
-export default Desayunos;
+export default Desayunos; 
