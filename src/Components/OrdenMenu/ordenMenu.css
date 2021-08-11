@@ -53,3 +53,13 @@
   .btnLast{
     text-align: center;
   }
+
+ button .desayunos{
+    display: flex; 
+  }
+  .hidden{
+    display: flex;
+  }
+ .ContainerDesayuno{
+   display: none;
+ }

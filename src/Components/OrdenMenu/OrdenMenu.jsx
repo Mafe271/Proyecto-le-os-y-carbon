@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactDOM } from "react";
 import '../OrdenMenu/ordenMenu.css'
 import { Link } from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles";
@@ -25,7 +26,16 @@ const data = [
   // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
 ];
 
+
+
 function OrdenMenu() {
+ 
+
+  function Desayuno() {
+    var containerDesayuno = ReactDOM.findDOMNode(document.getElementById('breakfast'));
+   containerDesayuno.classList.add('hidden');
+    
+  }
   
 const useStyle = makeStyles({
   containerTable: {
@@ -47,6 +57,14 @@ const useStyle = makeStyles({
 
   const classes = useStyle()
 
+  // const objetoPedido = {}
+  //       pedido.forEach(elemento => {
+  //           Object.assign(
+  //               objetoPedido, 
+  //               {[elemento.nombre]:{apellido: elemento.apellido, edad: elemento.edad}}
+  //               )
+  //       })
+
   return (
     <div className="tabla">
       <h1> Pepito Perez </h1>
@@ -62,7 +80,7 @@ const useStyle = makeStyles({
               </TableRow>
             </TableHead>
 
-            <TableBody cla>
+            <TableBody>
               {data.map((celda) => (
                 <TableRow>
                   <TableCell className={classes.celda}> {celda.cantidad_por_mesa}</TableCell>
@@ -93,9 +111,12 @@ const useStyle = makeStyles({
       </div>
 
       <div className="btnFirst">
-        <button className="desayunos" onClick='desayunos'>
+        <button className="desayunos" onClick={Desayuno}>
           Desayunos
         </button>
+         <div className="ContainerDesayuno" id='breakfast' >
+           {<Desayunos/>}
+         </div>
         <button className="entradas" onClick="Entradas">
           Entradas
         </button>
@@ -130,10 +151,8 @@ const useStyle = makeStyles({
           Bebidas
         </button>
       </div>
-      <Desayunos />
     </div>
   );
 }
-
 
 export default OrdenMenu;
