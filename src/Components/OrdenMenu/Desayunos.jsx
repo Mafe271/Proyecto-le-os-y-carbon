@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import MaterialTable from 'material-table'
 import { makeStyles } from '@material-ui/core/styles';
-import  {Button,
+import  {Button, Table,
          TableBody,
          TableCell,            
          TableContainer,
@@ -45,28 +44,7 @@ const desayunos=[
  
 
 
-function Desayunos() {     
-
-
-  // const [desayunos, setDesayunos]=useState([]);
-  // const peticionGet = async () => {
-  }
-  const columnas=[
-    {
-      title:'Producto',
-      field:'producto'
-    },
-    {
-      title:'Precio',
-      field:'presio_por_unidad',
-      type:'numeric'
-    },
-    {
-      title:'Eliminar',
-      field:'eliminar'
-    }
-  ];
-
+function Desayunos() {   
  
   const classes = useStyle()
   return (
@@ -96,6 +74,6 @@ function Desayunos() {
       </div>   
     </>
   );
-
+}
 
 export default Desayunos; 
