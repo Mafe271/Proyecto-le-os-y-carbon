@@ -1,8 +1,8 @@
 import React from "react";
 import "../../Components/Ordenes/ordenes.css";
+import Login from "./../Ordenes/Login";
 import mesa1 from "../../utils/images/mesaOrdenes.png";
 import mesa from "../../utils/images/mesaOrdenes.png";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 function Ordenes() {
   return (
@@ -42,7 +42,7 @@ function Ordenes() {
           <img className="mesa2" src={mesa} alt="mesa" />
         </button>
       </div>
-
+       <Login />
     </div>
   );
 }

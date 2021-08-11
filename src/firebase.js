@@ -1,8 +1,6 @@
-import { initializeApp } from "firebase/app"
+import firebase from 'firebase/app'
 import 'firebase/auth'
 
- // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
     apiKey: "AIzaSyAjc8N01rkgBLLvEpsA5KQWNePr3L9kmV4",
     authDomain: "lenos-y-carbon.firebaseapp.com",
@@ -13,20 +11,8 @@ import 'firebase/auth'
     measurementId: "G-VWGG1B7TQ9"
   };
 
-  const firebaseApp = initializeApp(firebaseConfig);
+  const fire = firebase.initializeApp(firebaseConfig);
+  const auth = fire.auth()
 
-//   const auth = getAuth();
-// createUserWithEmailAndPassword(auth)
-//   .then((userCredential) => {
-//     // Iniciado sesión
-//     const user = userCredential.user;
+  export { auth }
 
-      
- 
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-   
-//   });
