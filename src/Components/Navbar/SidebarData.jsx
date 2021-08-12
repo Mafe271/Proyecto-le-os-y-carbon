@@ -1,5 +1,5 @@
 import React from 'react';
-import * as FaIcons from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa'; /*Se importan los iconos de menu navbar*/
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 

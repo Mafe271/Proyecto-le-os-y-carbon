@@ -1,6 +1,6 @@
 import React from 'react';
 import './../Footer/Footer.css'
-import facebook from '../../utils/images/icons8-facebook-48.png'
+import facebook from '../../utils/images/icons8-facebook-48.png' /*Se importa los iconos de facebook y instagram*/
 import instagram from '../../utils/images/icons8-instagram-128.png'
 
 const Footer = () => {

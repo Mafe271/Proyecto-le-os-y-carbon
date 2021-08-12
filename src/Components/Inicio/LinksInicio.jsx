@@ -1,8 +1,8 @@
 import React from 'react';
-import '../Inicio/inicio.css';
-import restaurante from "../../utils/images/hist.png"
+import '../Inicio/inicio.css';  /*Se importan los estilos de inicio*/
+import restaurante from "../../utils/images/hist.png" /*Se importa imagen de linea del tiempo de los logos*/
 
-const LinksInicio = () => {
+const LinksInicio = () => { /*link del boton nuestra pagina y Inicio de nuestra historia*/
     return (
         <div>
             <div className="oficial">
@@ -25,6 +25,6 @@ const LinksInicio = () => {
         </div>
 
     );
-};
+};  /*Final de nuestra historia*/
 
 export default LinksInicio;

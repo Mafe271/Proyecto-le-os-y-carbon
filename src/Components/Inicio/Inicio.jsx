@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; /*importaciones y importaciones del carrusel*/
 import Pollo from "../../utils/images/carrus1.png";
 import Kit from "../../utils/images/carrus2.PNG";
 import Carne from "../../utils/images/carrus3.png";
-import "../Inicio/inicio.css";
+import "../Inicio/inicio.css";      /*Se importan los estilos de inicio*/
 import LinksInicio from "./LinksInicio";
 
-import {
+import { /*Inicio del carrusel*/
   Carousel,
   CarouselItem,
   CarouselControl,
@@ -96,6 +96,6 @@ const Inicio = () => {
       <LinksInicio />
     </div>
   );
-};
+};   /*Fin del carrusel*/
 
 export default Inicio;

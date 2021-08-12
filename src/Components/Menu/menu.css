@@ -1,3 +1,4 @@
+/*Estilos del fondo de las imagenes*/
 .menu{
     background-image: url(../../utils/images/fontmenu.png);
     background-repeat: repeat-y;
@@ -7,6 +8,7 @@
     border: 8px solid #451A11;
 }
 
+/*Estilos de todas las imagenes*/
 .menu img{
     width: 400px;
     height: 200px;
@@ -35,6 +37,7 @@
     margin-left: 100px;
 }
 
+/*Estilos del boton menu*/
 #title {
     background-image: url(../../utils/images/font.png);
     background-repeat: no-repeat;
@@ -57,6 +60,7 @@
     text-shadow: 3px -3px #EC6E21 ;
 }
 
+/*Estilos del texto de las direcciones*/
 .location, .locat{
     display: flex;
     background-color: #451A11;
@@ -69,6 +73,8 @@ p{
     margin: 50px;
     padding-top: 30px;
 }
+
+/*Estilos de las imagenes de direciones*/
 .location img{
     width: 600px;
     height: 400px;

@@ -15,7 +15,7 @@ const useStyles=makeStyles((theme)=>({
       boxShadow: '55px 40px 23px -11px rgba(17, 10, 17, 0.65)',
       padding: '16px 32px 24px',
       top: '50%',
-      left: '50%',  
+      left: '50%',
       transform: 'translate(-50%, -50%)'
   },
   entrar:{
