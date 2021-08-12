@@ -20,3 +20,13 @@
     margin-left: 80%;
 
 }
+
+/*RESPONSIVE*/
+
+@Media only screen and (max-width:420px){
+    .Footer{
+    height: 50px;
+
+    }
+
+}

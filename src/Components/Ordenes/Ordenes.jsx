@@ -1,6 +1,6 @@
 import React from "react";
-import "../../Components/Ordenes/ordenes.css";   /*Se importan los estilos de ordenes*/
-import mesa1 from "../../utils/images/mesaOrdenes.png";
+import "../../Components/Ordenes/ordenes.css";
+import mesa1 from "../../utils/images/mesaOrdenes.png"; /*Se importan las imagenes de las mesas*/
 import mesa from "../../utils/images/mesaOrdenes.png";
 import Mesas from "./Mesas";
 

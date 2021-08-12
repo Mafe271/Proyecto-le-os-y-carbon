@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Modal, Button, colors } from '@material-ui/core';
+import { Modal, Button, colors } from '@material-ui/core'; /*Se importa el material-iu necesario*/
 import { makeStyles } from '@material-ui/styles';
 import '../../Components/Ordenes/ordenes.css'
 import { auth } from "../../firebase";
-import mesa from "../../utils/images/mesaOrdenes.png";
+import mesa from "../../utils/images/mesaOrdenes.png"; /*Importacion de imagen*/
 
 
 const useStyles=makeStyles((theme)=>({
@@ -22,27 +22,27 @@ const useStyles=makeStyles((theme)=>({
     color:'white',
     marginTop:'100px'
   }
-}))    
-function Mesas() {
-    const styles = useStyles(); 
+}))
+function Mesas() { /*Modal de autentificacion*/
+    const styles = useStyles();
 
     const [modal, setModal]=useState(false);
 
     const abrirCerrarModal =()=> (
         setModal(!modal)
     )
-    
+
     const [email, setEmail] = useState("")
     const [pass, setPass] = useState("")
-   
-  const usuarioRegistrado = (e) =>{ 
+
+  const usuarioRegistrado = (e) =>{
     e.preventDefault();
     auth
       .signInWithEmailAndPassword(email, pass)
-      .then((res) => 
+      .then((res) =>
      { alert("usuario registrado")
       window.location.replace("/ordenMenu")}
-      );    
+      );
   }
   const body=(
     <div className={styles.modal}>
@@ -62,25 +62,25 @@ function Mesas() {
         }}
         type="password"
         className="form-control mt-3"
-        placeholder="contraseña" 
+        placeholder="contraseña"
       />
       <input
         type="submit"
         className="btn btn-block enter"
-        value="Sing in"                        
-      /> 
+        value="Sing in"
+      />
       <input
         type="submit"
         className="btn btn-block cancel"
         value="Cancelar"
-        onClick={()=>abrirCerrarModal()} 
-      /> 
-    </form> 
-    </div> 
-)                      
+        onClick={()=>abrirCerrarModal()}
+      />
+    </form>
+    </div>
+)
 
   return (
-     
+
      <div className='Zona'>
         <div className="zona">
            <button className="link" onClick={()=>abrirCerrarModal()}>
@@ -97,8 +97,8 @@ function Mesas() {
            </button>
            <button className="link" onClick={()=>abrirCerrarModal()}>
                <img className="mesa2" src={mesa} alt="mesa" />
-           </button> 
-        </div> 
+           </button>
+        </div>
 
         <div className="zona">
            <button className="link" onClick={()=>abrirCerrarModal()}>
@@ -113,9 +113,9 @@ function Mesas() {
            onClose={abrirCerrarModal}>
                {body}
        </Modal>
-     </div> 
-     
+     </div>
+
     );
-};
+}; {/*Final del modal de autentificacion*/}
 
 export default Mesas;
