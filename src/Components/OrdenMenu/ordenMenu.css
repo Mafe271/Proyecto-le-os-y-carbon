@@ -57,9 +57,9 @@
  button .desayunos{
     display: flex; 
   }
-  .hidden{
+  .active{
     display: flex;
   }
- .ContainerDesayuno{
+ .disable{
    display: none;
  }

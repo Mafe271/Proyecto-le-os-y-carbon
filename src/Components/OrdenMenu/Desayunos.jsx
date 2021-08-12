@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { db } from '../../firebase'
 import { makeStyles } from '@material-ui/core/styles';
 import  {Button, Table,
          TableBody,
@@ -11,9 +12,8 @@ from '@material-ui/core';
 
 const useStyle = makeStyles({
   containerTable: {
-    // display: 'none',
     minWidth: 700,
-    color: 'white',
+    color: 'white',  
     margin: '0px 50px',
   },
   celda:{
@@ -41,38 +41,55 @@ const desayunos=[
   {producto: 'CALENTAO PAISA (Chicharrón, frijol, maduro y aguacate)', precio_por_unidad: '$21.900 ', eliminar:'-' },
   {producto: 'BISTEC A CABALLO', precio_por_unidad: '$22.900' , eliminar:'-' }, 
 
-];
+]; 
+const OndenMenu = () => {
+
+   const tablaProductos = {
+        tabla:{
+          producto: "",
+          precio:"",
+          
+        }
+
+        
+   }
+}
  
 
 function Desayunos() {   
  
-
+  const agregar = (productos) => {
+    // setProductos
+    // ([...desayunos])
+}
   const classes = useStyle()
   return (
     <>
-      <div className={classes.containerTable}>
+    {/* onSubmit={pedidos} */}
+      <div className={classes.containerTable} >
           <TableContainer> 
               <Table> 
                   <TableHead> 
-                    <TableRow> 
-                      <TableCell> </TableCell>
-                      <TableCell> </TableCell>
-                      <TableCell> </TableCell>
+                    <TableRow > 
+                      <TableCell>Producto</TableCell>
+                      <TableCell>Precio</TableCell>
+                      <TableCell>Eliminar</TableCell>
+                      <TableCell>  </TableCell>  
                     </TableRow>
-                  </TableHead>
-
+                  </TableHead>   
                   <TableBody>
-                    {desayunos.map(celda=>(
+                    {desayunos.map(productos=>(  
                       <TableRow>
-                        <TableCell className={classes.celda}> {celda.producto} </TableCell>
-                        <TableCell className={classes.celda}> {celda.precio_por_unidad} </TableCell>
-                        <TableCell className={classes.celda}> {celda.eliminar} </TableCell>
+                        <TableCell className={classes.celda}> {productos.producto} </TableCell>
+                        <TableCell className={classes.celda}> {productos.precio_por_unidad} </TableCell>
+                        <TableCell className={classes.celda}> {productos.eliminar} </TableCell>
+                        <TableCell className={classes.celda}><button>Agregar</button> </TableCell>    
                        </TableRow>
                     ))}
                   </TableBody>
               </Table>
           </TableContainer>
-      </div>   
+      </div>  
     </>
   );
 }

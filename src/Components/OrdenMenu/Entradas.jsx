@@ -1,5 +1,4 @@
-import React from 'react';
-import '../OrdenMenu/ordenMenu.css'
+import React, {useState} from 'react';
 import { styled } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import  {Button, Table,
@@ -11,7 +10,7 @@ import  {Button, Table,
       }
 from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyle = makeStyles({
   containerTable: {
     minWidth: 700,
     color: 'white',
@@ -26,7 +25,7 @@ const useStyles = makeStyles({
  
 });
 
-const desayunos=[
+const entradas=[
     {producto: 'YUCA CON HOGAO', precio_por_unidad: '$4.900' , eliminar:'-' },
     {producto: 'PATACONES CON HOGAO 6 unidades', precio_por_unidad: '$6.900' , eliminar:'-' },
     {producto: 'MORCILLA LEÑOS', precio_por_unidad: '$ 10.900' , eliminar:'-' },
@@ -37,17 +36,9 @@ const desayunos=[
    
 ];
  
- 
 
 
-
- 
- 
- 
- 
-
-
-function Entradas(props) {
+function Entradas() {
 
       const classes = useStyle()  
       return (
