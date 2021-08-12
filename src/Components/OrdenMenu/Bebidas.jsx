@@ -1,5 +1,4 @@
-import React from 'react';
-import '../OrdenMenu/ordenMenu.css'
+import React, {useState} from 'react';
 import { styled } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import  {Button, Table,
@@ -26,7 +25,7 @@ const useStyle = makeStyles({
  
 });
 
-const desayunos=[
+const bebidas=[
     {producto: 'AREPA_PAISA', precio_por_unidad: '$3.500' , eliminar:'-' },
     {producto: 'PANDEBONO', precio_por_unidad: '$4.900' , eliminar:'-' },
     {producto: 'ALMOJÁBANA', precio_por_unidad: '$4.900' , eliminar:'-' },
@@ -44,7 +43,7 @@ const desayunos=[
 
 ];
 
-function Bebidas(props) {
+function Bebidas() {
    
   const classes = useStyle()    
         return (

@@ -53,3 +53,13 @@
   .btnLast{
     text-align: center;
   }
+
+ button .desayunos{
+    display: flex; 
+  }
+  .active{
+    display: flex;
+  }
+ .disable{
+   display: none;
+ }
