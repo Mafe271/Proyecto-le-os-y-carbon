@@ -54,7 +54,7 @@
     text-align: center;
   }
 
- button .desayunos{
+ button .desayunos, .entradas, .res{
     display: flex; 
   }
   .active{

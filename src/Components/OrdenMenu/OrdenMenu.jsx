@@ -1,17 +1,18 @@
 import React, {useState} from "react"
+import { db } from '../../firebase'
 import '../OrdenMenu/ordenMenu.css'
 import { Link } from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles";
 import Desayunos from "../../Components/OrdenMenu/Desayunos";
-import Entradas from '../../Components/OrdenMenu/Entradas' 
-// import Res from "../../Components/OrdenMenu/Res";
-// import Pescado from "../../Components/OrdenMenu/Pescado";
-// import Pollo from "../../Components/OrdenMenu/Pollo";
-// import Ensaladas from "../OrdenMenu/Ensaladas"
-// import Sandwiches from "../../Components/OrdenMenu/Sandwiches";
-// import Cocteles from "../../Components/OrdenMenu/Cocteles";
-// import Postres from "../../Components/OrdenMenu/Postres";
-// import Bebidas from '../OrdenMenu/Bebidas'
+import Entradas1 from '../../Components/OrdenMenu/Entradas';
+import Res1 from "../OrdenMenu/Entradas"
+import Pescado from "../../Components/OrdenMenu/Pescado";
+import Pollo from "../../Components/OrdenMenu/Pollo";
+import Ensaladas from "../OrdenMenu/Ensaladas"
+import Sandwiches from "../../Components/OrdenMenu/Sandwiches";
+import Cocteles from "../../Components/OrdenMenu/Cocteles";
+import Postres from "../../Components/OrdenMenu/Postres";
+import Bebidas from '../OrdenMenu/Bebidas';
 
 
 import {
@@ -26,60 +27,70 @@ import {
 from "@material-ui/core";
 
 const data = [
-  // {cantidad_por_mesa: "2", producto: "Almojabana", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
-  // {cantidad_por_mesa: "2", producto: "Caldo", precio_por_unidad: "4.000$", subtotal: "8.000$", },
+ 
 ];
 
 
 
 function OrdenMenu() {
-  const [toggle, setToggle] = useState(true);
+
+
+
+  const total = data.forEach( subtotal =>{
+    let suma = subtotal
+  })
+  
+  const [toggle, setToggle] = useState(false);
  
   function Desayuno() {
     setToggle(!toggle);
        console.log(toggle);
   }
-  // function Entradas() {
+  const [toggleEntradas, setToggleEntradas] = useState(false);
+
+  function Entradas() {
+    setToggleEntradas(!toggleEntradas);
+       console.log(toggleEntradas);
+  }
+
+  const [toggleRes, setToggleRes] = useState(false);
+
+  function Res() {
+    setToggleRes(!toggleRes);
+       console.log(toggleRes);
+  }
+  
+  // function Res() {
   //   setToggle(!toggle);
   //   console.log(toggle);
   // }
-  // function Res() {
-  //  setToggle(!toggle);
-  // console.log(toggle);
-  // }
   // function Pescado() {
-  //  var containerPescado = reactDom.findDOMNode(document.getElementById('fish'));
-  //  containerPescado.classList.add('hidden');
+  //   setToggle(!toggle);
+  //   console.log(toggle);
   // }
   // function Pollo() {
-  //  var containerPollo = reactDom.findDOMNode(document.getElementById('chicken'));
-  //  containerPollo.classList.add('hidden');
+  //   setToggle(!toggle);
+  //   console.log(toggle);
   // }
   // function Ensaladas() {
-  //  var containerEnsaladas = reactDom.findDOMNode(document.getElementById('salad'));
-  //  containerEnsaladas.classList.add('hidden');
+  //   setToggle(!toggle);
+  //   console.log(toggle);
   // }
   // function Sandwiches() {
-  //  var containerSandwiches = reactDom.findDOMNode(document.getElementById('sandwich'));
-  //  containerSandwiches.classList.add('hidden');
+  //   setToggle(!toggle);
+  //   console.log(toggle);
   // }
   // function Cocteles() {
-  //  var containerCocteles = reactDom.findDOMNode(document.getElementById('cocktails'));
-  //  containerCocteles.classList.add('hidden');
+  //   setToggle(!toggle);
+  //   console.log(toggle);
   // }
   // function Postres() {
-  //  var containerPostres = reactDom.findDOMNode(document.getElementById('desserts'));
-  //  containerPostres.classList.add('hidden');
+  //   setToggle(!toggle);
+  //   console.log(toggle);
   // }
   // function Bebidas() {
-  //  var containerBebidas = reactDom.findDOMNode(document.getElementById('drinks'));
-  //  containerBebidas.classList.add('hidden');
+  //   setToggle(!toggle);
+  //   console.log(toggle);
   // }
   
 
@@ -100,16 +111,31 @@ const useStyle = makeStyles({
     fontFamily: 'roboto slab',
 },
 });
+const tablaProductos = {
+  contenido: {
+    producto: "",
+    precio:"",
+    eliminar:"",
+    certify: false
+  },
+  checked:{
+    yes: false,
+    no: false
+  }   
+}
 
   const classes = useStyle()
 
-  // const objetoPedido = {}
-  //       pedido.forEach(elemento => {
-  //           Object.assign(
-  //               objetoPedido, 
-  //               {[elemento.nombre]:{apellido: elemento.apellido, edad: elemento.edad}}
-  //               )
-  //       })
+  const handlesubmit = async (e) => { 
+    e.preventDefault()
+    const objetoData = {}
+  data.forEach(elemento => {
+      Object.assign(
+          objetoData, 
+          {[elemento.producto]:{precio: elemento.precio, elinimar: elemento.eliminar}}
+          )
+  })
+  }
 
   return (
     <div className="tabla">
@@ -124,17 +150,24 @@ const useStyle = makeStyles({
                 <TableCell className={classes.cellTitle}> Precio por unidad</TableCell>
                 <TableCell className={classes.cellTitle}> Subtotal </TableCell>
               </TableRow>
+              <TableRow>
+                <TableCell className={classes.celda}> total </TableCell>
+              </TableRow>
             </TableHead>
 
             <TableBody>
-              {data.map((celda, index) => (
-                <TableRow key={index}>
+              {data.map(celda => (
+              <>
+                <TableRow onSubmit={celda}>
                   <TableCell className={classes.celda}> {celda.cantidad_por_mesa}</TableCell>
                   <TableCell className={classes.celda}> {celda.producto} </TableCell>
                   <TableCell className={classes.celda}> {celda.precio_por_unidad} </TableCell>
                   <TableCell className={classes.celda}> {celda.subtotal} </TableCell>
+                  </TableRow>
+                <TableRow>
                   <TableCell className={classes.celda}> {celda.total} </TableCell>
                 </TableRow>
+              </>
               ))}
             </TableBody>  
           </Table>
@@ -166,63 +199,63 @@ const useStyle = makeStyles({
         <button className="entradas" onClick={Entradas}>  
           Entradas
         </button> 
-        {/* <div className={ toggle ? 'active': 'disable'}>
-           {<Entradas/>}
-         </div>   */}
-        <button className="res" onClick="{Res}">
+        <div className={ toggleEntradas ? 'active': 'disable'}>
+           {<Entradas1/>}
+         </div>  
+        <button className="res" onClick={Res}>
           Res
         </button>
-        {/* <div className="ContainerRes" id='meat' >
-           {<Res/>}
-         </div> */}
+        <div className={ toggleRes ? 'active': 'disable'} >
+           {<Res1/>}
+         </div>
         <button className="pescado" onClick="{Pescado}"> 
           Pescado
         </button>
-        {/* <div className="ContainerPescado" id='fish' >
+        <div className="ContainerPescado" id='fish' >
            {<Pescado/>}
-         </div> */}
+         </div>
       </div>
       <div className="btnSecond">
         <button className="pollo" onClick="{Pollo}"> 
           Pollo
         </button>
-        {/* <div className="ContainerPollo" id='chicken' >
+        <div className="ContainerPollo" id='chicken' >
            {<Pollo/>}
-         </div> */}
+         </div>
         <button className="ensaladas" onClick="{Ensaladas}">
           Ensaladas
         </button>
-        {/* <div className="ContainerEnsaladas" id='salad' >
+        <div className="ContainerEnsaladas" id='salad' >
            {<Ensaladas/>}
-         </div> */}
+         </div>
         <button className="sandwiches" onClick="{Sandwiches}">
           Sandwiches
         </button>
-        {/* <div className="ContainerSandwiches" id='Sandwich'>
+        <div className="ContainerSandwiches" id='Sandwich'>
            {<Sandwiches/>}
-         </div> */}
+         </div>
       </div>
       <div className="btnThird">
         <button className="coctel" onClick="{Cocteles}">
           Cócteles
         </button>
-        {/* <div className="ContainerCocteles" id='cocktails'>
+        <div className="ContainerCocteles" id='cocktails'>
            {<Cocteles/>}
-         </div> */}
+         </div>
         <button className="postres" onClick="{Postres}">
           Postres
         </button>
-        {/* <div className="ContainerPostres" id='desserts'>
+        <div className="ContainerPostres" id='desserts'>
            {<Postres/>}
-         </div> */}
+         </div>
       </div>
       <div className="btnLast">
         <button className="bebidas" onClick="{Bebidas}">
           Bebidas
         </button>
-        {/* <div className="ContainerBebidas" id='drinks' >
+        <div className="ContainerBebidas" id='drinks' >
            {<Bebidas/>}
-         </div> */}
+         </div>
       </div>
     </div>
   );

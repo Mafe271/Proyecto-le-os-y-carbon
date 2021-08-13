@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { db } from '../../firebase'
+import { useParams } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import  {Button, Table,
          TableBody,
@@ -42,30 +43,69 @@ const desayunos=[
   {producto: 'BISTEC A CABALLO', precio_por_unidad: '$22.900' , eliminar:'-' }, 
 
 ]; 
-const OndenMenu = () => {
 
-   const tablaProductos = {
-        tabla:{
-          producto: "",
-          precio:"",
-          
-        }
-
-        
-   }
-}
  
 
 function Desayunos() {   
- 
-  const agregar = (productos) => {
-    // setProductos
-    // ([...desayunos])
-}
+
   const classes = useStyle()
+
+  const tablaProductos = {
+    contenido: {
+      producto: "",
+      precio:"",
+      certify: false
+    },
+    checked:{
+      yes: false,
+      no: false
+    }   
+  }
+  const { id }=useParams()
+  const [data, setData] = useState([])
+  const [contenido, setContenido] = useState(tablaProductos.contenido)
+  const [checked, setChecked] = useState(tablaProductos.checked)
+  
+  // console.log(/*objetoData*/)
+//   await db.collection('data').productos().setToggle(contenido)
+//  .then(_res=>{
+//    alert("gregado con exito")
+//    setContenido(tablaProductos.contenido)
+//    setChecked(tablaProductos.checked)
+//  })
+//  .catch(_err=> alert("Algo salio mal"))
+  
+  const handleChecked = (e) => {
+    const{ name } = e.target
+    if(name="yes"){
+      setChecked({
+        checked,
+        yes: true,
+        no: false
+      })
+      setContenido({
+        ...contenido,
+        certify: true
+      })
+    }
+    if(name = "no"){
+      setChecked({
+        ...checked,
+        yes: false,
+        no: true
+    })
+    setContenido({
+      ...contenido,
+      certify: true
+    })
+  }
+ }
+  const agregar = (_desayunos) => {
+    // setProductos([...productos, Desayunos])
+
+  }
   return (
     <>
-    {/* onSubmit={pedidos} */}
       <div className={classes.containerTable} >
           <TableContainer> 
               <Table> 
@@ -78,12 +118,12 @@ function Desayunos() {
                     </TableRow>
                   </TableHead>   
                   <TableBody>
-                    {desayunos.map(productos=>(  
-                      <TableRow>
+                    {desayunos.map((productos, index) => (  
+                      <TableRow key={index}>
                         <TableCell className={classes.celda}> {productos.producto} </TableCell>
                         <TableCell className={classes.celda}> {productos.precio_por_unidad} </TableCell>
                         <TableCell className={classes.celda}> {productos.eliminar} </TableCell>
-                        <TableCell className={classes.celda}><button>Agregar</button> </TableCell>    
+                        <TableCell className={classes.celda}><button onClick={()=>agregar(productos)}>Agregar</button> </TableCell>    
                        </TableRow>
                     ))}
                   </TableBody>
