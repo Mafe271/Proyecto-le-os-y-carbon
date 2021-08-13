@@ -1,65 +1,83 @@
-.tabla{
-    background-image: url(../../utils/images/font.png);
-    background-repeat: repeat-y;
-    background-size: contain;
-    border: 3px solid #865c52;
-  }
-  .tabla h1{
-    font-size: 50px;
-    font-family: roboto slab;
-    color: blanchedalmond;
-    font-weight: 700;
-    text-align: center;     
-  }
+.tabla {
+  background-image: url(../../utils/images/font.png);
+  background-repeat: repeat-y;
+  background-size: contain;
+  border: 3px solid #865c52;
+}
+.tabla h1 {
+  font-size: 50px;
+  font-family: roboto slab;
+  color: blanchedalmond;
+  font-weight: 700;
+  text-align: center;
+}
 
-  .tabla button{
-     background-color: #EC6E21;
-     color: blanchedalmond;
-     font-size: 26px;
-     font-family: roboto slab;
-     border-radius: 8px;
-     width: 180px;
-     height: 50px; 
-  }
-  .bttn, .menus, .volver{
-     margin: 50px;
-  }
+.tabla button {
+  background-color: #ec6e21;
+  color: blanchedalmond;
+  font-size: 26px;
+  font-family: roboto slab;
+  border-radius: 8px;
+  width: 180px;
+  height: 50px;
+}
+.bttn,
+.menus,
+.volver {
+  margin: 50px;
+}
 
-  .finalizar, .volver{
-    float: right;
-  }
+.finalizar,
+.volver {
+  float: right;
+}
 
-  .btnFirst{
-     margin: 40px;
-     margin-top: 200px;
-     text-align: center;
-  }
-  .desayunos, .entradas, .res, .pescado{
-    margin: 0px 65px ;
-  }
-  .btnSecond{
-    text-align: center;
-  }
-  .pollo, .sopas, .sandwiches{
-    margin: 10px 65px;
-  }
-  .btnThird{
-    margin: 50px;
-    text-align: center;
-  }
-  .coctel, .poster{
-    margin: 10px 130px 0px 0px;       
-  }
-  .btnLast{
-    text-align: center;
-  }
+.btnFirst {
+  margin: 40px;
+  margin-top: 200px;
+  text-align: center;
+}
+.desayunos,
+.entradas,
+.res,
+.pescado {
+  margin: 0px 65px;
+}
+.btnSecond {
+  text-align: center;
+}
+.pollo,
+.ensaladas,
+.sandwiches {
+  margin: 10px 65px;
+}
+.btnThird {
+  margin: 50px;
+  text-align: center;
+}
+.coctel,
+.postres {
+  margin: 10px 130px 0px 0px;
+}
+.btnLast {
+  text-align: center;
+}
 
- button .desayunos, .entradas, .res{
-    display: flex; 
-  }
-  .active{
-    display: flex;
-  }
- .disable{
-   display: none;
- }
+button .desayunos,
+.entradas,
+.res,
+.pescado,
+.pollo,
+.ensaladas,
+.sandwiches,
+.coctel,
+.postres,
+.bebidas {
+  display: flex;
+}
+.active {
+  display: flex;
+}
+.disable {
+  display: none;
+}
