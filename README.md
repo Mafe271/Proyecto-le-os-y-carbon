@@ -1,7 +1,6 @@
-# Getting Started with Create React App
+# Leños y Carbón🥩🔥
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+es un proyecto que permite que el usuario escoja a sus gustos la comida que mas le apetezca y que además se contabilicen todos los productos que desee con el valor, mesero y mesa.
 ## Available Scripts
 
 In the project directory, you can run:
