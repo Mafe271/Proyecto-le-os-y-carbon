@@ -3,7 +3,7 @@
 LEÑOS es un restaurante que nace y se hace famoso en Cali donde se vuelve parte de la cultura y se conecta emocionalmente con los caleños convirtiéndose en destino. Luego se expande a nivel nacional principalmente en Medellín, Bogotá y otras ciudades. Hoy tenemos 30 restaurantes entre plazoleta de comidas y servicio a la mesa.
 
 Es orgullosa de nuestros sabores y ofrece una propuesta consistente y enfocada que genera conexiones emocionales desde la tradición Colombiana.
-(https://www.google.com/url?sa=i&url=https%3A%2F%2Fpalmettoplaza.com%2Fproject%2Flenos-y-carbon%2F&psig=AOvVaw06G2jz8SjZ2PFpWNm-rqbe&ust=1629088620534000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKj-kJqasvICFQAAAAAdAAAAABAD)
+![](https://palmettoplaza.com/wp-content/uploads/2019/09/lenos.png)
 ## Available Scripts
 
 In the project directory, you can run:
