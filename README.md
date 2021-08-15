@@ -11,7 +11,7 @@ Es orgullosa de nuestros sabores y ofrece una propuesta consistente y enfocada q
 Leños y Carbón es un proyecto que permitira al usuario (mesero) seleccionar y registrar los productos pedidos por el cliente, además se contabilizaran todos los productos dando a conocer mesero, mesa, la cantidad por unidad, precio, el subtotal  y total global.
 
 ### CONSTRUIDO CON 💻🛠️
-- JSX
+- HTML5
 - CSS
 - JavaScript
 - React
