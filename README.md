@@ -16,6 +16,25 @@ Leños y Carbón es un proyecto que permite que el usuario escoja a sus gustos l
 - JavaScript
 - React
 
+Encaso de que querer copiar o usar esta información este es el código:
+
+Código para clonar con protocoló https:
+
+```
+https://github.com/Mafe271/Proyecto-react-lenoscarbon.git
+```
+Código para clonar con protocoló SSH:
+
+
+```
+git@github.com:Mafe271/Proyecto-react-lenoscarbon.git
+```
+Código para clonar con protocoló Github CLI:
+
+```
+gh repo clone Mafe271/Proyecto-react-lenoscarbon
+```
+
 
 
 
