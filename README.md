@@ -8,7 +8,7 @@ Es orgullosa de nuestros sabores y ofrece una propuesta consistente y enfocada q
 
 ## OBJETIVO DEL PROYECTO
 
-Leños y Carbón es un proyecto que permite que el usuario escoja a sus gustos la comida que mas le apetezca y que además se contabilicen todos los productos que desee con el valor, mesero y mesa.
+Leños y Carbón es un proyecto que permitira al usuario (mesero) seleccionar y registrar los productos pedidos por el cliente, además se contabilizaran todos los productos dando a conocer , mesero y mesa la cantidad por unidad, precio, el subtotal  y total global.
 
 ### CONSTRUIDO CON 💻🛠️
 - JSX
