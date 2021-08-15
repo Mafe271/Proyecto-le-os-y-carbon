@@ -4,7 +4,7 @@ LEÑOS es un restaurante que nace y se hace famoso en Cali donde se vuelve parte
 
 Es orgullosa de nuestros sabores y ofrece una propuesta consistente y enfocada que genera conexiones emocionales desde la tradición Colombiana.
 
-![](https://palmettoplaza.com/wp-content/uploads/2019/09/lenos.png)
+![](https://www.guiacomercial.com.co/storage/Cali/663_Le%C3%B1os%20y%20Carbon_5d6d634c3a932.jpeg)
 ## Available Scripts
 
 In the project directory, you can run:
