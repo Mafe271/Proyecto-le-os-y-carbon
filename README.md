@@ -10,7 +10,7 @@ Es orgullosa de nuestros sabores y ofrece una propuesta consistente y enfocada q
 
 Leños y Carbón es un proyecto que permite que el usuario escoja a sus gustos la comida que mas le apetezca y que además se contabilicen todos los productos que desee con el valor, mesero y mesa.
 
-### CONSTRUIDO CON
+### CONSTRUIDO CON 💻🛠️
 - JSX
 - CSS
 - JavaScript
