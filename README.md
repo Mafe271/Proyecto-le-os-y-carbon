@@ -15,6 +15,7 @@ Leños y Carbón es un proyecto que permitira al usuario (mesero) seleccionar y 
 - CSS
 - JavaScript
 - React
+- Firebase
 
 ### PROCEDIMIENTO
 En caso de que querer copiar o usar esta información este es el código:
