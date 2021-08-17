@@ -10,7 +10,7 @@ const LinksInicio = () => { /*link del boton nuestra pagina y Inicio de nuestra 
                 <a href="https://lenosycarbon.com.co/">PAGINA OFICIAL</a>
             </div>
             <div className="historia">
-                <h1>NUESTRA HISTORIA</h1>
+                <div className="titulo"><h1>NUESTRA HISTORIA</h1></div>
                 <p>En Leños & Carbón, junto a las Fundaciones Best Buddies y RECA, brindamos
                     oportunidades de trabajo a personas con discapacidad intelectual, por que
                     creemos que nuestros espacios de trabajo son más sanos cuando se enriquecen

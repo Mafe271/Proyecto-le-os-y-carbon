@@ -30,3 +30,10 @@
     }
 
 }
+
+@Media screen and (min-width:760px) and (max-width:768px){
+    .Footer{
+      height: 70px;
+      width: 650px;
+      }
+    }

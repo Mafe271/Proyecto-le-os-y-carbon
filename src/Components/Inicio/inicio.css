@@ -52,4 +52,28 @@
 
 /*RESPONSIVE*/
 
-@Media only screen and (max-width:420px){}
+@Media screen and (min-width:760px) and (max-width:768px){
+    .oficial a{
+      font-size: 30px;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      margin: 0%;
+      }
+      .oficial img{
+          width: 640px;
+        }
+        .historia .titulo {
+            background-color: #EC6E21;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            font-size: 35px;
+        }
+        .historia p{
+          font-size: 20px;
+          margin: 50px;
+        }
+}
