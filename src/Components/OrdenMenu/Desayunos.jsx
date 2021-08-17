@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {fragment, useState} from 'react';
+import {firebaseConfig} from "../../firebase"
 import { db } from '../../firebase'
 import { useParams } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,6 +12,7 @@ import  {Button, Table,
       }
 from '@material-ui/core';
 
+// estilos de la tabla                
 const useStyle = makeStyles({
   containerTable: {
     minWidth: 700,
@@ -50,6 +52,13 @@ function Desayunos() {
 
   const classes = useStyle()
 
+  const [productos, setProductos] = useState({
+    producto: "",
+    precio:""
+  })
+   const handlesubmit = (event) =>{
+     console.log(event.target.value)
+   }
   const tablaProductos = {
     contenido: {
       producto: "",
@@ -106,30 +115,30 @@ function Desayunos() {
   }
   return (
     <>
-      <div className={classes.containerTable} >
+      <div className={classes.containerTable} >  
           <TableContainer> 
               <Table> 
                   <TableHead> 
                     <TableRow > 
-                      <TableCell>Producto</TableCell>
-                      <TableCell>Precio</TableCell>
-                      <TableCell>Eliminar</TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
                       <TableCell>  </TableCell>  
                     </TableRow>
                   </TableHead>   
                   <TableBody>
-                    {desayunos.map((productos, index) => (  
+                    {desayunos.map((producto, index) => (  
                       <TableRow key={index}>
-                        <TableCell className={classes.celda}> {productos.producto} </TableCell>
-                        <TableCell className={classes.celda}> {productos.precio_por_unidad} </TableCell>
-                        <TableCell className={classes.celda}> {productos.eliminar} </TableCell>
-                        <TableCell className={classes.celda}><button onClick={()=>agregar(productos)}>Agregar</button> </TableCell>    
+                        <TableCell onChange={handlesubmit} name='producto' className={classes.celda}> {producto.producto} </TableCell>
+                        <TableCell onChange={handlesubmit} name='precio' className={classes.celda}> {producto.precio_por_unidad} </TableCell>
+                        <TableCell onChange={handlesubmit} className={classes.celda}> {producto.eliminar} </TableCell>
+                        <TableCell onChange={handlesubmit} name='producto' className={classes.celda}><button type='submit' onClick={()=>agregar(productos)}>Agregar</button> </TableCell>    
                        </TableRow>
                     ))}
                   </TableBody>
               </Table>
           </TableContainer>
-      </div>  
+      </div>
     </>
   );
 }

@@ -10,6 +10,7 @@ import  {Button, Table,
       }
 from '@material-ui/core';
 
+// estilos de la tabla
 const useStyle = makeStyles({
   containerTable: {
     minWidth: 700,
@@ -26,22 +27,14 @@ const useStyle = makeStyles({
 });
 
 const pescado=[
-    {producto: 'AREPA_PAISA', precio_por_unidad: '$3.500' , eliminar:'-' },
-    {producto: 'PANDEBONO', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'ALMOJÁBANA', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'PORCIÓN DE QUESO (Queso blanco) ', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'HUEVOS AL GUSTO (2 unidades)', precio_por_unidad: '' , eliminar:'-' },
-    {producto: '-Frito o revuelto', precio_por_unidad: '$5.900' , eliminar:'-' },
-    {producto: '-Con cebolla y tomate', precio_por_unidad: '$6.900' , eliminar:'-' },
-    {producto: 'COCTEL DE FRUTAS (kiwi, banano, fresa_y_melón)', precio_por_unidad: '$6.900' , eliminar:'-' },
-    {producto: 'CALDO DE COSTILLA', precio_por_unidad: '$11.900' , eliminar:'-' },
-    {producto: 'CANASTA DE ALMOJÁBANA Y PAN DE BONO', precio_por_unidad: '$13.900' , eliminar:'-' },
-    {producto: 'CALENTAO CON CHORIZO, LENTEJAS Y AREPA', precio_por_unidad: '$17.900' , eliminar:'-' },
-    {producto: 'CALENTAO CON CARNE DE RES O CARNE DE CERDO Y MADURO', precio_por_unidad: '$17.900' , eliminar:'-' },
-    {producto: 'CALENTAO PAISA (Chicharrón, frijol, maduro y aguacate)', precio_por_unidad: '$21.900' , eliminar:'-' },
-    {producto: 'BISTEC A CABALLO', precio_por_unidad: '$22.900' , eliminar:'-' }, 
+    {producto: 'TRUCHA A LA PLANCHA', precio_por_unidad: '$28.900' , eliminar:'-' },
+    {producto: 'FILETE DE PESCADO BLANCO', precio_por_unidad: '$34.900' , eliminar:'-' },
+    {producto: 'SALMÓN A LA PARILLA ', precio_por_unidad: '$38.900' , eliminar:'-' },
 
 ];
+
+
+
 
 function Pescado() {
       

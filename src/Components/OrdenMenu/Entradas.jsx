@@ -9,6 +9,7 @@ import  {Button, Table,
       }
 from '@material-ui/core';
 
+// estilos de la tabla
 const useStyle = makeStyles({
   containerTable: {
     minWidth: 700,

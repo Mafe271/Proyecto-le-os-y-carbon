@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import {firebaseConfig} from "../../firebase"
 import { db } from "../../firebase";
 import "../OrdenMenu/ordenMenu.css";
 import { Link } from "react-router-dom";
@@ -26,6 +27,50 @@ import {
 const data = [];
 
 function OrdenMenu() {
+
+  // estilos de la tabla
+  const useStyle = makeStyles({
+    containerTable: {
+      minWidth: 700,
+    },
+    cellTitle: {
+      fontSize: "23px",
+      color: "bisque",
+      fontFamily: "roboto slab",
+    },
+    celda: {
+      fontSize: "20px",
+      color: "beige",
+      paddingLeft: "50px",
+      fontFamily: "roboto slab",
+    },
+  });
+
+  const [productos, setProductos] = useState({
+    producto: "",
+    precio:""
+  })
+
+  // getAll() {
+  //   return db;
+  // }
+
+  // create(data) {
+  //   return db.push(data);
+  // }
+
+  // update(key, value) {
+  //   return db.child(key).update(value);
+  // }
+
+  // delete(key) {
+  //   return db.child(key).remove();
+  // }
+
+  // deleteAll() {
+  //   return db.remove();
+  // }
+
   const total = data.forEach((subtotal) => {
     let suma = subtotal;
   });
@@ -92,23 +137,7 @@ function OrdenMenu() {
     console.log(toggleBebidas);
   }
 
-  const useStyle = makeStyles({
-    containerTable: {
-      minWidth: 700,
-      margin: "50px 50px 100px",
-    },
-    cellTitle: {
-      fontSize: "23px",
-      color: "bisque",
-      fontFamily: "roboto slab",
-    },
-    celda: {
-      fontSize: "20px",
-      color: "beige",
-      paddingLeft: "50px",
-      fontFamily: "roboto slab",
-    },
-  });
+ 
   const tablaProductos = {
     contenido: {
       producto: "",
@@ -145,19 +174,13 @@ function OrdenMenu() {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className={classes.cellTitle}>
-                  {" "}
-                  Cantidad por mesa{" "}
-                </TableCell>
+                <TableCell className={classes.cellTitle}> Cantidad por mesa</TableCell>
                 <TableCell className={classes.cellTitle}> Producto </TableCell>
-                <TableCell className={classes.cellTitle}>
-                  {" "}
-                  Precio por unidad
-                </TableCell>
+                <TableCell className={classes.cellTitle}> Precio por unidad</TableCell>
                 <TableCell className={classes.cellTitle}> Subtotal </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className={classes.celda}> total </TableCell>
+                <TableCell className={classes.cellTitle}> Total </TableCell>
               </TableRow>
             </TableHead>
 
@@ -165,28 +188,13 @@ function OrdenMenu() {
               {data.map((celda) => (
                 <>
                   <TableRow onSubmit={celda}>
-                    <TableCell className={classes.celda}>
-                      {" "}
-                      {celda.cantidad_por_mesa}
-                    </TableCell>
-                    <TableCell className={classes.celda}>
-                      {" "}
-                      {celda.producto}{" "}
-                    </TableCell>
-                    <TableCell className={classes.celda}>
-                      {" "}
-                      {celda.precio_por_unidad}{" "}
-                    </TableCell>
-                    <TableCell className={classes.celda}>
-                      {" "}
-                      {celda.subtotal}{" "}
-                    </TableCell>
+                    <TableCell className={classes.celda}>{celda.cantidad_por_mesa}</TableCell>
+                    <TableCell className={classes.celda}>{celda.producto}</TableCell>
+                    <TableCell className={classes.celda}>{celda.precio_por_unidad}</TableCell>
+                    <TableCell className={classes.celda}>{celda.subtotal}</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className={classes.celda}>
-                      {" "}
-                      {celda.total}{" "}
-                    </TableCell>
+                    <TableCell className={classes.celda}>{celda.total}</TableCell>
                   </TableRow>
                 </>
               ))}
@@ -195,83 +203,97 @@ function OrdenMenu() {
         </TableContainer>
       </div>
 
-      <button className="menus" onClick="menus">
-        Menú
-      </button>
-
-      <Link className="volver" to="/Ordenes">
-        <button>Volver</button>
-      </Link>
+      
       <div className="bttn">
+        <button className="menus" onClick="menus">
+           Menú
+        </button>
         <button className="finalizar " onClick="menus">
           Finalizar
         </button>
       </div>
+      <Link className="volver" to="/Ordenes">
+        <button>Volver</button>
+      </Link>
 
-      <div className="btnFirst">
+       <div className='btnFirst'>
         <button className="desayunos" onClick={Desayuno}>
           Desayunos
         </button>
         <div className={toggle ? "active" : "disable"}>
-          {<Desayunos />}</div>
+          {<Desayunos />}
+        </div>
+
         <button className="entradas" onClick={Entradas}>
           Entradas
         </button>
         <div className={toggleEntradas ? "active" : "disable"}>
           {<Entradas1 />}
         </div>
+
         <button className="res" onClick={Res}>
           Res
         </button>
         <div className={toggleRes ? "active" : "disable"}>
-          {<Res1 />}</div>
+          {<Res1 />}
+        </div>
+
         <button className="pescado" onClick={Pescado}>
           Pescado
         </button>
         <div className={togglePescado ? "active" : "disable"}>
           {<Pescado1 />}
         </div>
-      </div>
-      <div className="btnSecond">
+       </div>
+
+       <div className='btnSecond'>
         <button className="pollo" onClick={Pollo}>
           Pollo
         </button>
-        <div className={togglePollo ? "active" : "disable"}>{<Pollo1 />}</div>
+        <div className={togglePollo ? "active" : "disable"}>
+          {<Pollo1 />}
+        </div>
+
         <button className="ensaladas" onClick={Ensaladas}>
           Ensaladas
         </button>
         <div className={toggleEnsaladas ? "active" : "disable"}>
           {<Ensaladas1 />}
         </div>
+
         <button className="sandwiches" onClick={Sandwiches}>
           Sandwiches
         </button>
         <div className={toggleSandwiches ? "active" : "disable"}>
           {<Sandwiches1 />}
         </div>
-      </div>
-      <div className="btnThird">
+        </div>
+        
+        <div className='btnThird'>
         <button className="coctel" onClick={Cocteles}>
           Cócteles
         </button>
         <div className={toggleCocteles ? "active" : "disable"}>
           {<Cocteles1 />}
         </div>
+
         <button className="postres" onClick={Postres}>
           Postres
         </button>
         <div className={togglePostres ? "active" : "disable"}>
           {<Postres1 />}
         </div>
-      </div>
-      <div className="btnLast">
+        </div>
+
+        <div className='btnLast'>
         <button className="bebidas" onClick={Bebidas}>
           Bebidas
         </button>
         <div className={toggleBebidas ? "active" : "disable"}>
           {<Bebidas1 />}
         </div>
-      </div>
+        </div>
+     
     </div>
   );
 }

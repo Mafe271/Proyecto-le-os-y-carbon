@@ -10,6 +10,7 @@ import  {Button, Table,
       }
 from '@material-ui/core';
 
+// estilos de la tabla
 const useStyle = makeStyles({
   containerTable: {
     minWidth: 700,
@@ -26,21 +27,19 @@ const useStyle = makeStyles({
 });
 
 const res=[
-    {producto: 'AREPA_PAISA', precio_por_unidad: '$3.500' , eliminar:'-' },
-    {producto: 'PANDEBONO', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'ALMOJÁBANA', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'PORCIÓN DE QUESO (Queso blanco) ', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'HUEVOS AL GUSTO (2 unidades)', precio_por_unidad: '' , eliminar:'-' },
-    {producto: '-Frito o revuelto', precio_por_unidad: '$5.900' , eliminar:'-' },
-    {producto: '-Con cebolla y tomate', precio_por_unidad: '$6.900' , eliminar:'-' },
-    {producto: 'COCTEL DE FRUTAS (kiwi, banano, fresa_y_melón)', precio_por_unidad: '$6.900' , eliminar:'-' },
-    {producto: 'CALDO DE COSTILLA', precio_por_unidad: '$11.900' , eliminar:'-' },
-    {producto: 'CANASTA DE ALMOJÁBANA Y PAN DE BONO', precio_por_unidad: '$13.900' , eliminar:'-' },
-    {producto: 'CALENTAO CON CHORIZO, LENTEJAS Y AREPA', precio_por_unidad: '$17.900' , eliminar:'-' },
-    {producto: 'CALENTAO CON CARNE DE RES O CARNE DE CERDO Y MADURO', precio_por_unidad: '$17.900' , eliminar:'-' },
-    {producto: 'CALENTAO PAISA (Chicharrón, frijol, maduro y aguacate)', precio_por_unidad: '$21.900' , eliminar:'-' },
-    {producto: 'BISTEC A CABALLO', precio_por_unidad: '$22.900' , eliminar:'-' }, 
-
+    {producto: 'Morrillo de res en cocción lenta por 10 minutos terminado a la parrilla con chimichurri.'},
+    {producto: 'Morrillo 250g', precio_por_unidad: '$25.900' , eliminar:'-' },
+    {producto: 'Morrillo 250g. + Gaseosa', precio_por_unidad: '$26.900' , eliminar:'-' },
+    {producto: 'CHURRASCO 230g.', precio_por_unidad: '$33.900' , eliminar:'-' },
+    {producto: 'CHURRASCO 350g.', precio_por_unidad: '$37.900' , eliminar:'-' },
+    {producto: 'BABY BEEF 230g.', precio_por_unidad: '$36.900' , eliminar:'-' },
+    {producto: 'BABY BEEF 350g.', precio_por_unidad: '$39.900' , eliminar:'-' },
+    {producto: 'PUNTA DE ANCA 230g.', precio_por_unidad: '$32.900' , eliminar:'-' },
+    {producto: 'PUNTA DE ANCA 350g.', precio_por_unidad: '$37.900' , eliminar:'-' },
+    {producto: 'SÚPER PUNTA DE ANCA 400g.', precio_por_unidad: '$43.900' , eliminar:'-' },
+    {producto: 'BIFE CHORIZO 430g.', precio_por_unidad: '$43.900' , eliminar:'-' },
+    {producto: 'LOMITO PARRILA 360g. Disfrútalo con chimichurri, salsa BBQ O salsa pimienta', precio_por_unidad: '$45.900' , eliminar:'-' },
+    {producto: 'FILET MIGNON 360g.', precio_por_unidad: '$45.900' , eliminar:'-' },
 ];
 
 function Res() {

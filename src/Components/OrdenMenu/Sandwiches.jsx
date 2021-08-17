@@ -10,6 +10,7 @@ import  {Button, Table,
       }
 from '@material-ui/core';
 
+// estilos de la tabla
 const useStyle = makeStyles({
   containerTable: {
     minWidth: 700,
@@ -26,20 +27,13 @@ const useStyle = makeStyles({
 });
 
 const sandwiches=[
-    {producto: 'AREPA_PAISA', precio_por_unidad: '$3.500' , eliminar:'-' },
-    {producto: 'PANDEBONO', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'ALMOJÁBANA', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'PORCIÓN DE QUESO (Queso blanco) ', precio_por_unidad: '$4.900' , eliminar:'-' },
-    {producto: 'HUEVOS AL GUSTO (2 unidades)', precio_por_unidad: '' , eliminar:'-' },
-    {producto: '-Frito o revuelto', precio_por_unidad: '$5.900' , eliminar:'-' },
-    {producto: '-Con cebolla y tomate', precio_por_unidad: '$6.900' , eliminar:'-' },
-    {producto: 'COCTEL DE FRUTAS (kiwi, banano, fresa_y_melón)', precio_por_unidad: '$6.900' , eliminar:'-' },
-    {producto: 'CALDO DE COSTILLA', precio_por_unidad: '$11.900' , eliminar:'-' },
-    {producto: 'CANASTA DE ALMOJÁBANA Y PAN DE BONO', precio_por_unidad: '$13.900' , eliminar:'-' },
-    {producto: 'CALENTAO CON CHORIZO, LENTEJAS Y AREPA', precio_por_unidad: '$17.900' , eliminar:'-' },
-    {producto: 'CALENTAO CON CARNE DE RES O CARNE DE CERDO Y MADURO', precio_por_unidad: '$17.900' , eliminar:'-' },
-    {producto: 'CALENTAO PAISA (Chicharrón, frijol, maduro y aguacate)', precio_por_unidad: '$21.900' , eliminar:'-' },
-    {producto: 'BISTEC A CABALLO', precio_por_unidad: '$22.900' , eliminar:'-' }, 
+    {producto: 'CHORIPAN Con chimichurri', precio_por_unidad: '$14.900' , eliminar:'-' },
+    {producto: 'SÁNDWICH DE POLLO A LA PARRILA 160g. De pollo, Con verduras y salsa BBQ.', precio_por_unidad: '$21.900' , eliminar:'-' },
+    {producto: 'SÁNWICH DE MORRILLO A LA PARRILLA CON PAPAS Y GASEOSA 160g. De Morillo en julianas', precio_por_unidad: '$23.900' , eliminar:'-' },
+    {producto: 'SÁNDWICH DE COSTILLA ST. LOUIS A LA PARRILLA CON PAPAS Y GASEOSA 160g. de Costillas St. ', precio_por_unidad: '$26.900' , eliminar:'-' },
+    {producto: 'SÁNDWICH DE CHURRASCO A LA. PARRILLA CON PAPAS Y GASEOSA 160 g. de Churrasco', precio_por_unidad: '$27.900' , eliminar:'-' },
+    {producto: 'SÁNDWICH DE LOMO DE RES A LA PARRILLA 160 g. de lomo de res', precio_por_unidad: '$23.900' , eliminar:'-' },
+    {producto: 'SÁNDWICH DE LOMO DE RES A LA PARRILLA CON PAPAS Y GASEOSA 160 g. de lomo de res.', precio_por_unidad: '$29.900' , eliminar:'-' },
 
 ];
 

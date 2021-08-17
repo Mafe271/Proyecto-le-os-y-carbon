@@ -12,7 +12,7 @@ import 'firebase/auth'
     measurementId: "G-VWGG1B7TQ9"
   };
 
-  const fire = firebase.initializeApp(firebaseConfig);
+  export const fire = firebase.initializeApp(firebaseConfig);
  export const db = fire.firestore();
   const auth = fire.auth()
 
