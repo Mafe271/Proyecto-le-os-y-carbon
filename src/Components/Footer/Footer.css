@@ -1,3 +1,4 @@
+/*Estilos del footer*/
 .Footer{
     background-image: url(../../utils/images/footer.png);
     background-repeat: no-repeat;
@@ -7,7 +8,7 @@
 
 }
 
-
+/*Estilos de los iconos de facebook y instagram*/
 .iconos img{
     width: 100%;
     height: 50%;
@@ -19,3 +20,20 @@
     margin-left: 80%;
 
 }
+
+/*RESPONSIVE*/
+
+@Media only screen and (max-width:420px){
+    .Footer{
+    height: 50px;
+
+    }
+
+}
+
+@Media screen and (min-width:760px) and (max-width:768px){
+    .Footer{
+      height: 70px;
+      width: 650px;
+      }
+    }

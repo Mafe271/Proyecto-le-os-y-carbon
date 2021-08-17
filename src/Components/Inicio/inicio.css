@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
+/*Estilos del fondo de la pagina*/
 .oficial{
     background-color: #451A11;
     border: 8px solid #451A11;
@@ -7,6 +8,7 @@
     text-align: center;
 }
 
+/*Estilos de la imagen*/
 .oficial img{
     align-items: center;
     justify-content: center;
@@ -17,6 +19,7 @@
 
 }
 
+/*Estilos del boton pagina inicial*/
 .oficial a{
     font-family: 'roboto slab';
     text-decoration: none;
@@ -26,10 +29,13 @@
     color: #F2DDBA;
 }
 
+/*Estilos del titulo nuestra historia*/
 .historia{
     background-color: #FBF8F3;
     font-size: 20px;
 }
+
+/*Estilos del texto de nuestra historia*/
 .historia h1{
     font-family: 'roboto slab';
     font-size: 50px;
@@ -41,5 +47,33 @@
 }
 .historia p{
     font-family: 'Roboto', sans-serif;
-    color: black; 
+    color: black;
+}
+
+/*RESPONSIVE*/
+
+@Media screen and (min-width:760px) and (max-width:768px){
+    .oficial a{
+      font-size: 30px;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      margin: 0%;
+      }
+      .oficial img{
+          width: 640px;
+        }
+        .historia .titulo {
+            background-color: #EC6E21;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            font-size: 35px;
+        }
+        .historia p{
+          font-size: 20px;
+          margin: 50px;
+        }
 }

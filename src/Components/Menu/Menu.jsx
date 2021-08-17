@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Menu/menu.css';
-import calentao from '../../utils/images/calentao.PNG'
+import '../Menu/menu.css';  /*Se importa los estilos de menu*/
+import calentao from '../../utils/images/calentao.PNG' /*Importaciones de las imagenes*/
 import carnes from '../../utils/images/carnes.PNG'
 import carnes2 from '../../utils/images/Carnes2.PNG'
 import entradas from '../../utils/images/Entradas.PNG'
@@ -11,7 +11,7 @@ import mall from '../../utils/images/mallmap.PNG'
 import airport from '../../utils/images/airportmap.PNG'
 
 
-function Menu() {
+function Menu() {  /*Inicio del menu de imagenes*/
   return (
     <div className='menu'>
 
@@ -32,9 +32,9 @@ function Menu() {
       <div className='menu5'>
         <img className='img6' src={sandwiches} alt="sandwich" />
         <img className='img7' src={coctel} alt="coctel" />
-      </div>
+      </div> {/*Final del menu imagenes*/}
 
-      <div className='location'>
+      <div className='location'>  {/*Incio de las direcciones de los centros comerciales*/}
         <p>Leños & Carbon <br />
           Centro Comercial Parque La Colina <br />
           Carrera 58D No. 146-51 <br />
@@ -60,8 +60,8 @@ function Menu() {
         <a href="https://www.google.com/maps/search/El+Dorado+Calle+26+No.+103-09/@4.6948835,-74.143074,16z/data=!3m1!4b1?hl=es">
         <img src={airport} alt="airport" />
         </a>
-      </div>
-        
+      </div>  {/*Final de las direcciones de los centros comerciales*/}
+
     </div>
   );
 }

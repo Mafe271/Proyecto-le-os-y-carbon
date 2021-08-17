@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../../../src/App.css";
+import "../../../src/App.css";  /*Se importa los estilos de app.css*/
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "../Navbar/SidebarData";
-import "../Navbar/Navbar.css";
+import "../Navbar/Navbar.css";  /*Se importa los estilos de navbar*/
 import { IconContext } from "react-icons";
 
 function Navbar() {

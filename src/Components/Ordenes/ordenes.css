@@ -1,9 +1,11 @@
+/*Estilos de la imagen superirior*/
 .ordenes{
     background-image: url(../../utils/images/fontOrdenes.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+/*Estilos del titulo en la imagen*/
 .ordenes p{
     font-size: 70px;
     font-family: roboto slab;
@@ -12,7 +14,9 @@
     padding: 0px 60px;
     font-weight: 800;
 }
- 
+
+
+/*Estilos de las mesas*/
 .mesas{
     background-color: #451A11;
     margin: 30px 0px;
@@ -34,30 +38,49 @@
 }
 .mesa1, .mesa2{
     padding: 40px;
-    margin-bottom: 30px;      
+    margin-bottom: 30px;
     transform: rotate(90deg);
 }
-.mesa2{                           
+.mesa2{
     margin-left: 10px;
 }
 h2{
- font-family: roboto slab; 
- font-weight:800; 
-}                         
-.enter{
-    font-size: 18px; 
-    color:cornsilk;        
-    font-family: roboto slab;
-    background-color: #451A11; 
-    margin: 30px 0px 0px 30px;       
+ font-family: roboto slab;
+ font-weight:800;
 }
-.cancel{                               
+
+/*Estilos de los botones del login*/
+.enter{
+    font-size: 18px;
+    color:cornsilk;
+    font-family: roboto slab;
+    background-color: #451A11;
+    margin: 30px 0px 0px 30px;
+}
+.cancel{
     color: cornsilk;
-    background-color: #451A11; 
+    background-color: #451A11;
     font-family: roboto slab;
     width: 80px;
     height: 40px;
     border-radius: 5px;
     float: right;
-    margin: 30px;  
+    margin: 30px;
 }
+
+/*RESPONSIVE*/
+
+@Media only screen and (max-width:420px){
+    .Footer{
+    height: 50px;
+
+    }
+
+}
+
+@Media screen and (min-width:760px) and (max-width:768px){
+    .Footer{
+      height: 70px;
+      width: 650px;
+      }
+    }

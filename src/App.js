@@ -8,12 +8,12 @@ import Ordenes from "./Components/Ordenes/Ordenes.jsx";
 import Footer from "./Components/Footer/Footer";
 import OrdenMenu from "./Components/OrdenMenu/OrdenMenu";
 
-function App() {
-  return (   
-    <>  
-      <Router>   
+function App() { /*Importaciones de toda la pagina*/
+  return (
+    <>
+      <Router>
         <Navbar />
-        <Switch> 
+        <Switch>
           <Route path="/inicio" exact component={Inicio} />
           <Route path="/" exact component={Inicio} />
           <Route path="/menu" component={Menu} />
@@ -22,7 +22,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-    </>            
+    </>
   );
 }
 
