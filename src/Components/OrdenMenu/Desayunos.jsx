@@ -1,6 +1,7 @@
 import React, {fragment, useState} from 'react';
-import {firebaseConfig} from "../../firebase"
+import axios from 'axios';
 import { db } from '../../firebase'
+import {Delete} from '@material-ui/icons';
 import { useParams } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import  {Button, Table,
@@ -9,8 +10,11 @@ import  {Button, Table,
          TableContainer,
          TableHead,
          TableRow,
+         Modal
       }
 from '@material-ui/core';
+
+const baseUrl='http://localhost:3000//consolas/'
 
 // estilos de la tabla                
 const useStyle = makeStyles({
@@ -25,10 +29,21 @@ const useStyle = makeStyles({
     paddingLeft: '50px',
     fontFamily: 'roboto slab',
 },
+modal: {
+  fontFamily: 'roboto',
+  position: 'absolute',
+  width: 400,
+  backgroundColor: '#976546',
+  border: '2px solid #000',
+  padding: '16px 32px 24px',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)'
+},
 
 });
 
-const desayunos=[ 
+const datos=[ 
   {producto: 'AREPA PAISA', precio_por_unidad: '$3.500' , eliminar:'-' },
   {producto: 'PANDEBONO', precio_por_unidad: '$4.900' , eliminar:'-' },
   {producto: 'ALMOJÁBANA', precio_por_unidad: '$4.900' , eliminar:'-' },
@@ -46,24 +61,47 @@ const desayunos=[
 
 ]; 
 
- 
 
 function Desayunos() {   
 
   const classes = useStyle()
+ 
+  const [modalEliminar, setModalEliminar]=useState(false);
 
   const [productos, setProductos] = useState({
     producto: "",
-    precio:""
+    precio:"",
+    eliminar:"",
+    agregar:""
   })
-   const handlesubmit = (event) =>{
-     console.log(event.target.value)
-   }
+
+const peticionDelete=async()=>{
+  await axios.delete(baseUrl+productos.id)
+  .then(response=>{
+    setData(data.filter(celda=>celda.id!==productos.id));
+    abrirCerrarModalEliminar();
+  })
+}
+
+const abrirCerrarModalEliminar=()=>{
+  setModalEliminar(!modalEliminar);
+}
+const seleccionarCelda=(consola, caso)=>{
+  setProductos(consola);
+  abrirCerrarModalEliminar()
+}
+
+  //  const handleSubmit = (event) =>{
+  //    console.log(event.target.value)
+  //    setProductos({
+  //      ...datos,
+  //      [event.target.name] : event.target.value
+  //    })
+  //  }
   const tablaProductos = {
     contenido: {
       producto: "",
-      precio:"",
-      certify: false
+      precio:""
     },
     checked:{
       yes: false,
@@ -109,10 +147,20 @@ function Desayunos() {
     })
   }
  }
+
   const agregar = (_desayunos) => {
     // setProductos([...productos, Desayunos])
-
   }
+  const bodyEliminar=(
+    <div className={classes.modal}>
+      <p>Esta seguro que desea eliminar este producto<b>{seleccionarCelda && seleccionarCelda.nombre}</b> ? </p>
+      <div align="right">
+        <Button color="bg-dark" onClick={()=>peticionDelete()} > <h2>Sí</h2> </Button>
+        <Button onClick={()=>abrirCerrarModalEliminar()}> <h2>No</h2> </Button>
+      </div>
+    </div>
+  )
+
   return (
     <>
       <div className={classes.containerTable} >  
@@ -127,20 +175,25 @@ function Desayunos() {
                     </TableRow>
                   </TableHead>   
                   <TableBody>
-                    {desayunos.map((producto, index) => (  
+                    {datos.map((producto, index) => (  
                       <TableRow key={index}>
-                        <TableCell onChange={handlesubmit} name='producto' className={classes.celda}> {producto.producto} </TableCell>
-                        <TableCell onChange={handlesubmit} name='precio' className={classes.celda}> {producto.precio_por_unidad} </TableCell>
-                        <TableCell onChange={handlesubmit} className={classes.celda}> {producto.eliminar} </TableCell>
-                        <TableCell onChange={handlesubmit} name='producto' className={classes.celda}><button type='submit' onClick={()=>agregar(productos)}>Agregar</button> </TableCell>    
+                        <TableCell name='producto' className={classes.celda} value={producto.producto}> {producto.producto} </TableCell>
+                        <TableCell  name='precio' className={classes.celda} value={producto.precio}> {producto.precio_por_unidad} </TableCell>
+                        <TableCell> <Delete className={classes.iconos} onClick={()=>seleccionarCelda(producto, 'Eliminar')}/></TableCell>   
                        </TableRow>
                     ))}
                   </TableBody>
               </Table>
           </TableContainer>
-      </div>
-    </>
-  );
-}
 
+          <Modal
+            open={modalEliminar}
+            onClose={abrirCerrarModalEliminar}>
+            {bodyEliminar}
+          </Modal>
+    </div>
+     
+    </>
+  )
+}
 export default Desayunos; 

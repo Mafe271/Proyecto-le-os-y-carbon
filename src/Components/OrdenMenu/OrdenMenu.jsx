@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-// import {firebaseConfig} from "../../firebase"
+import React, {useEffect, useState } from "react";
+import axios from 'axios';
 import { db } from "../../firebase";
 import "../OrdenMenu/ordenMenu.css";
 import { Link } from "react-router-dom";
@@ -22,55 +22,86 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TextField
 } from "@material-ui/core";
+
+const baseUrl='http://localhost:3000//consolas/'
 
 const data = [];
 
+// estilos de la tabla
+const useStyle = makeStyles({
+  containerTable: {
+    minWidth: 700,
+  },
+  cellTitle: {
+    fontSize: "23px",
+    color: "bisque",
+    fontFamily: "roboto slab",
+  },
+  celda: {
+    fontSize: "20px",
+    color: "beige",
+    paddingLeft: "50px",
+    fontFamily: "roboto slab",
+  },
+});
+
+
 function OrdenMenu() {
 
-  // estilos de la tabla
-  const useStyle = makeStyles({
-    containerTable: {
-      minWidth: 700,
-    },
-    cellTitle: {
-      fontSize: "23px",
-      color: "bisque",
-      fontFamily: "roboto slab",
-    },
-    celda: {
-      fontSize: "20px",
-      color: "beige",
-      paddingLeft: "50px",
-      fontFamily: "roboto slab",
-    },
-  });
+  const classes = useStyle();
+  const [data, setData]=useState([]);
 
-  const [productos, setProductos] = useState({
-    producto: "",
-    precio:""
+  const [pedidos, setPedidos]=useState({
+    cantidad: '',
+    producto:'',
+    precio:'',
+    subtotal:'',
+    total:''
   })
 
-  // getAll() {
-  //   return db;
-  // }
+  const handleChange=e=>{
+    const {name, value}=e.target;
+    setPedidos(prevState=>({
+      ...prevState,
+      [name]: value
+    }))
+    console.log(pedidos);
+  }
 
-  // create(data) {
-  //   return db.push(data);
-  // }
+  const peticionGet=async()=>{
+    await axios.get(baseUrl)
+    .then(response=>{
+      setData(response.data);
+    })
+  }
 
-  // update(key, value) {
-  //   return db.child(key).update(value);
-  // }
+  const peticionPost=async()=>{
+    await axios.post(baseUrl, pedidos)
+    .then(response=>{
+      setData(data.concat(response.data))
+    })
+  }
+  const peticionPut=async()=>{
+    await axios.put(baseUrl+pedidos.id, pedidos)
+    .then(response=>{
+      var dataNueva=data;
+      dataNueva.map(celda=>{
+        if(pedidos.id===celda.id){
+          celda.nombre=pedidos.nombre;
+          celda.lanzamiento=pedidos.lanzamiento;
+          celda.empresa=pedidos.empresa;
+          celda.unidades_vendidas=pedidos.unidades_vendidas;
+        }
+      })
+      setData(dataNueva);
+    })
+  }
 
-  // delete(key) {
-  //   return db.child(key).remove();
-  // }
-
-  // deleteAll() {
-  //   return db.remove();
-  // }
-
+  useEffect(async()=>{
+    await peticionGet();
+  },[])
   const total = data.forEach((subtotal) => {
     let suma = subtotal;
   });
@@ -151,7 +182,7 @@ function OrdenMenu() {
     },
   };
 
-  const classes = useStyle();
+ 
 
   const handlesubmit = async (e) => {
     e.preventDefault();
@@ -165,6 +196,7 @@ function OrdenMenu() {
       });
     });
   };
+
 
   return (
     <div className="tabla">
@@ -187,10 +219,10 @@ function OrdenMenu() {
             <TableBody>
               {data.map((celda) => (
                 <>
-                  <TableRow onSubmit={celda}>
-                    <TableCell className={classes.celda}>{celda.cantidad_por_mesa}</TableCell>
+                  <TableRow key={celda.id}>
+                    <TableCell className={classes.celda}>{celda.cantidad}</TableCell>
                     <TableCell className={classes.celda}>{celda.producto}</TableCell>
-                    <TableCell className={classes.celda}>{celda.precio_por_unidad}</TableCell>
+                    <TableCell className={classes.celda}>{celda.precio}</TableCell>
                     <TableCell className={classes.celda}>{celda.subtotal}</TableCell>
                   </TableRow>
                   <TableRow>

@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import { styled } from '@material-ui/core';
+import axios from 'axios';
+import { db } from '../../firebase'
+import {Delete} from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import  {Button, Table,
          TableBody,
@@ -7,8 +9,10 @@ import  {Button, Table,
          TableContainer,
          TableHead,
          TableRow,
+         Modal
       }
 from '@material-ui/core';
+const baseUrl='http://localhost:3000//consolas/'
 
 // estilos de la tabla
 const useStyle = makeStyles({
@@ -22,7 +26,18 @@ const useStyle = makeStyles({
     color: 'beige',
     paddingLeft: '50px',
     fontFamily: 'roboto slab',
-},
+  },
+  modal: {
+    fontFamily: 'roboto',
+    position: 'absolute',
+    width: 400,
+    backgroundColor: '#976546',
+    border: '2px solid #000',
+    padding: '16px 32px 24px',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
+  },
  
 });
 
@@ -45,6 +60,43 @@ const res=[
 function Res() {
      
       const classes = useStyle()
+
+      const [productos, setProductos] = useState({
+        producto: "",
+        precio:"",
+        eliminar:"",
+        agregar:""
+      })
+      
+      const [modalEliminar, setModalEliminar]=useState(false);
+      const [data, setData] = useState([])
+
+      const peticionDelete=async()=>{
+        await axios.delete(baseUrl+productos.id)
+         .then(response=>{
+        setData(data.filter(celda=>celda.id!==productos.id));
+        abrirCerrarModalEliminar();
+         })
+      }
+    
+      const abrirCerrarModalEliminar=()=>{
+        setModalEliminar(!modalEliminar);
+      }
+    
+      const seleccionarCelda=(consola, caso)=>{
+        setProductos(consola);
+        (caso==='eliminar')?eliminar():abrirCerrarModalEliminar()
+      }
+
+      const bodyEliminar=(
+        <div className={classes.modal}>
+          <p>Esta seguro que desea eliminar este producto<b>{seleccionarCelda && seleccionarCelda.nombre}</b> ? </p>
+          <div align="right">
+            <Button color="bg-dark" onClick={()=>peticionDelete()} > <h2>Sí</h2> </Button>
+            <Button onClick={()=>abrirCerrarModalEliminar()}> <h2>No</h2> </Button>
+          </div>
+        </div>
+      )
         return (
           <>
             <div className={classes.containerTable}>
@@ -59,16 +111,22 @@ function Res() {
                         </TableHead>
       
                         <TableBody>
-                          {res.map(celda=>(
+                          {res.map(producto=>(
                             <TableRow>
-                              <TableCell className={classes.celda}> {celda.producto} </TableCell>
-                              <TableCell className={classes.celda}> {celda.precio_por_unidad} </TableCell>
-                              <TableCell className={classes.celda}> {celda.eliminar} </TableCell>
+                              <TableCell className={classes.celda}> {producto.producto} </TableCell>
+                              <TableCell className={classes.celda}> {producto.precio_por_unidad} </TableCell>
+                              <TableCell className={classes.celda}> <Delete  className={classes.iconos} onClick={()=>seleccionarCelda(producto, 'Eliminar')}/> </TableCell>
                              </TableRow>
                           ))}
                         </TableBody>
                     </Table>
                 </TableContainer>
+
+                <Modal
+                  open={modalEliminar}
+                  onClose={abrirCerrarModalEliminar}>
+                  {bodyEliminar}
+                </Modal>
             </div>   
           </>
         );
